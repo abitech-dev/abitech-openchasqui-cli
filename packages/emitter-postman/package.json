@@ -1,0 +1,31 @@
+{
+  "name": "@abitech/openchasqui-emitter-postman",
+  "version": "0.1.0",
+  "description": "Emits Postman Collection v2.1 with environments and tests.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abitech-dev/abitech-openchasqui-cli.git",
+    "directory": "packages/emitter-postman"
+  },
+  "dependencies": {
+    "@abitech/openchasqui-spec": "workspace:^"
+  },
+  "devDependencies": {
+    "@abitech/openchasqui-core": "workspace:^",
+    "@abitech/openchasqui-loader-openapi": "workspace:^"
+  }
+}
