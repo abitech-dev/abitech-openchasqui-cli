@@ -89,3 +89,66 @@ describe("openchasqui generate", () => {
     expect(lines.error.join("\n")).toContain('Unknown command "deploy"');
   });
 });
+
+describe("openchasqui verify", () => {
+  async function verify(): Promise<number> {
+    return main(["verify", "--config", join(folder, "openchasqui.config.yaml")], output);
+  }
+
+  it("passes when the collections on disk match the contract", async () => {
+    await generate();
+    lines.log = [];
+
+    expect(await verify()).toBe(0);
+    expect(lines.log).toEqual(["postman: up to date"]);
+  });
+
+  it("fails when a generated file was edited by hand", async () => {
+    await generate();
+    await writeFile(
+      join(folder, "collections", "postman", "petstore.postman_collection.json"),
+      "{}",
+      "utf8",
+    );
+
+    expect(await verify()).toBe(1);
+    expect(lines.error).toContain("  outdated petstore.postman_collection.json");
+  });
+
+  it("fails when the folder has a file the contract no longer produces", async () => {
+    await generate();
+    await writeFile(join(folder, "collections", "postman", "old.json"), "{}", "utf8");
+
+    expect(await verify()).toBe(1);
+    expect(lines.error).toContain("  unexpected old.json");
+  });
+
+  it("fails when the collections were never generated", async () => {
+    await writeFile(join(folder, "openchasqui.config.yaml"), CONFIG, "utf8");
+
+    expect(await verify()).toBe(1);
+    expect(lines.error).toContain("  missing petstore.postman_collection.json");
+  });
+});
+
+describe("openchasqui init", () => {
+  it("creates a configuration for the contract it finds, with its first server", async () => {
+    await copyFile(join(folder, "petstore.yaml"), join(folder, "openapi.yaml"));
+
+    expect(await main(["init", "--config", join(folder, "openchasqui.config.yaml")], output)).toBe(
+      0,
+    );
+    const created = await readFile(join(folder, "openchasqui.config.yaml"), "utf8");
+    expect(created).toContain("source: openapi.yaml");
+    expect(created).toContain("baseUrl: https://api.example.com/v1");
+  });
+
+  it("never overwrites an existing configuration", async () => {
+    await writeFile(join(folder, "openchasqui.config.yaml"), "mine", "utf8");
+
+    expect(await main(["init", "--config", join(folder, "openchasqui.config.yaml")], output)).toBe(
+      1,
+    );
+    expect(await readFile(join(folder, "openchasqui.config.yaml"), "utf8")).toBe("mine");
+  });
+});

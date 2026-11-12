@@ -26,8 +26,13 @@
   },
   "dependencies": {
     "@abitech/openchasqui-core": "workspace:^",
+    "@abitech/openchasqui-emitter-bruno": "workspace:^",
     "@abitech/openchasqui-emitter-postman": "workspace:^",
+    "@abitech/openchasqui-generator-examples": "workspace:^",
+    "@abitech/openchasqui-generator-tests": "workspace:^",
     "@abitech/openchasqui-loader-openapi": "workspace:^",
-    "@abitech/openchasqui-spec": "workspace:^"
+    "@abitech/openchasqui-spec": "workspace:^",
+    "@abitech/openchasqui-transformer-overlay": "workspace:^",
+    "@abitech/openchasqui-validator-policies": "workspace:^"
   }
 }

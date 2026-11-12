@@ -1,1 +1,2 @@
-export { type Console, MARKER, main } from "./main.js";
+export { main } from "./main.js";
+export { type Console, MARKER } from "./project.js";

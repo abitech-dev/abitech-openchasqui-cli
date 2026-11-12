@@ -8,7 +8,10 @@
       "!fixtures/**/*.json",
       "!**/__golden__",
       "!CODE_OF_CONDUCT.md",
-      "!.changeset"
+      "!.changeset",
+      "!.claude",
+      "!CLAUDE.md",
+      "!CLAUDE.local.md"
     ]
   },
   "formatter": {

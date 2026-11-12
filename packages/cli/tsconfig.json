@@ -6,9 +6,32 @@
   },
   "include": ["src"],
   "references": [
-    { "path": "../spec" },
-    { "path": "../core" },
-    { "path": "../loader-openapi" },
-    { "path": "../emitter-postman" }
+    {
+      "path": "../spec"
+    },
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../transformer-overlay"
+    },
+    {
+      "path": "../loader-openapi"
+    },
+    {
+      "path": "../generator-examples"
+    },
+    {
+      "path": "../generator-tests"
+    },
+    {
+      "path": "../emitter-postman"
+    },
+    {
+      "path": "../emitter-bruno"
+    },
+    {
+      "path": "../validator-policies"
+    }
   ]
 }
