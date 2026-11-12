@@ -14,6 +14,8 @@ import { assertConfig } from "./config.js";
 import { parseDocument } from "./document.js";
 import { OpenChasquiError } from "./errors.js";
 
+const DEFAULT_RESPONSE_TIME_MS = 5000;
+
 export interface RunOptions {
   readonly reader: SourceReader;
   readonly plugins: readonly Plugin[];
@@ -37,9 +39,21 @@ export async function run(config: OpenChasquiConfig, options: RunOptions): Promi
   }
   const context: PluginContext = {
     reader: options.reader,
-    options: { overlays: config.overlays ?? [] },
+    options: {
+      overlays: config.overlays ?? [],
+      data: config.data ?? "generic",
+      responseTimeMs: config.tests?.responseTimeMs ?? DEFAULT_RESPONSE_TIME_MS,
+    },
   };
-  const document = parseDocument(await options.reader.readText(config.source));
+  const findings: Finding[] = [];
+  let document = parseDocument(await options.reader.readText(config.source));
+  for (const plugin of options.plugins) {
+    if (plugin.kind === "document-transformer") {
+      const result = await plugin.transformDocument(document, context);
+      document = result.document;
+      findings.push(...result.findings);
+    }
+  }
   const loader = options.plugins.find(
     (plugin) => plugin.kind === "loader" && plugin.canLoad(document),
   );
@@ -62,7 +76,6 @@ export async function run(config: OpenChasquiConfig, options: RunOptions): Promi
     }
   }
 
-  const findings: Finding[] = [];
   for (const plugin of options.plugins) {
     if (plugin.kind === "validator") {
       findings.push(...(await plugin.validate(model, context)));
