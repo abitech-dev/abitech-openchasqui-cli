@@ -9,9 +9,17 @@ export interface OpenChasquiConfig {
   readonly overlays?: readonly string[];
   readonly environments?: Readonly<Record<string, EnvironmentConfig>>;
   readonly variables?: VariableNames;
+  /** Data set for synthetic examples, `generic` by default or `es-pe`. */
+  readonly data?: "generic" | "es-pe";
+  readonly tests?: TestOptions;
   readonly targets: readonly string[];
   /** Folder for the emitted collections, one subfolder per target. */
   readonly output: string;
+}
+
+export interface TestOptions {
+  /** Slowest acceptable response. Defaults to 5000. */
+  readonly responseTimeMs?: number;
 }
 
 /** Names of the variables the collections use. */

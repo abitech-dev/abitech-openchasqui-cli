@@ -5,6 +5,7 @@ import type { ApiModel } from "./model.js";
 export const PLUGIN_API_VERSION = 1 as const;
 
 export type PluginKind =
+  | "document-transformer"
   | "loader"
   | "transformer"
   | "generator"
@@ -27,6 +28,17 @@ export interface SourceReader {
 export interface PluginContext {
   readonly reader: SourceReader;
   readonly options: Readonly<Record<string, unknown>>;
+}
+
+export interface DocumentTransformResult {
+  readonly document: unknown;
+  readonly findings: readonly Finding[];
+}
+
+/** Changes the source document before a loader reads it, as Overlay does. */
+export interface DocumentTransformer extends PluginBase {
+  readonly kind: "document-transformer";
+  transformDocument(document: unknown, context: PluginContext): Promise<DocumentTransformResult>;
 }
 
 export interface Loader extends PluginBase {
@@ -85,4 +97,4 @@ export interface Emitter extends PluginBase {
   emit(input: EmitInput, context: PluginContext): Promise<readonly EmittedFile[]>;
 }
 
-export type Plugin = Loader | Transformer | Generator | Validator | Emitter;
+export type Plugin = DocumentTransformer | Loader | Transformer | Generator | Validator | Emitter;
