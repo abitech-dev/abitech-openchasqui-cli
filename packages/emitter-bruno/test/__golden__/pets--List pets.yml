@@ -1,0 +1,44 @@
+info:
+  name: List pets
+  type: http
+  seq: 1
+http:
+  method: GET
+  url: "{{baseUrl}}/pets"
+  params:
+    - name: limit
+      value: "20"
+      type: query
+      disabled: true
+    - name: species
+      value: dog
+      type: query
+      disabled: true
+  auth: inherit
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("status is 200", function () {
+          expect(res.getStatus()).to.be.oneOf([200]);
+        });
+
+        test("content type is application/json", function () {
+          expect(res.getHeader("content-type") || "").to.include("application/json");
+        });
+
+        test("matches the contract", function () {
+          const Ajv = require("ajv");
+          const ajv = new Ajv({ strict: false, allErrors: true });
+          const valid = ajv.validate({"type":"array","items":{"allOf":[{"type":"object","required":["name","species"],"properties":{"name":{"type":"string","maxLength":60},"species":{"type":"string","enum":["dog","cat"]}}},{"type":"object","required":["id"],"properties":{"id":{"type":"integer"},"owner":{"type":"object","properties":{"name":{"type":"string"},"pets":{"type":"array","items":{}}}}}}]}}, res.getBody());
+          expect(valid, ajv.errorsText()).to.equal(true);
+        });
+
+        test("responds in under 5000 ms", function () {
+          expect(res.getResponseTime()).to.be.below(5000);
+        });
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
