@@ -1,0 +1,12 @@
+overlay: 1.0.0
+info:
+  title: End-to-end run against Prism
+  version: 1.0.0
+actions:
+  - description: Prism 5 crashes on a multipart request without a file.
+    target: $.paths['/pets/{petId}/photo']
+    remove: true
+  - target: $.paths['/pets'].get
+    update:
+      summary: Listar mascotas
+      x-openchasqui-folder: Mascotas

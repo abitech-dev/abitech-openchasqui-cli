@@ -45,3 +45,48 @@ jobs:
 
       - name: Test
         run: pnpm test
+
+  e2e:
+    name: Run the emitted collections against Prism
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: pnpm
+        run: corepack enable
+
+      - name: Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install and build
+        run: pnpm install --frozen-lockfile && pnpm build
+
+      - name: Generate the collections
+        working-directory: fixtures/e2e
+        run: node ../../packages/cli/dist/bin.js generate
+
+      - name: Start Prism
+        run: |
+          npx --yes @stoplight/prism-cli@5.16.0 mock fixtures/petstore.yaml -p 4010 > prism.log 2>&1 &
+          for _ in $(seq 1 30); do
+            curl -s -o /dev/null http://127.0.0.1:4010/health && exit 0
+            sleep 2
+          done
+          cat prism.log; exit 1
+
+      - name: Postman collection with newman
+        working-directory: fixtures/e2e/collections/postman
+        run: >
+          npx --yes newman@6.2.3 run petstore.postman_collection.json
+          -e petstore-mock.postman_environment.json --env-var token=e2e
+
+      - name: Bruno collection with the Bruno CLI
+        working-directory: fixtures/e2e/collections/bruno
+        run: npx --yes @usebruno/cli@4.3.0 run --env mock --env-var token=e2e

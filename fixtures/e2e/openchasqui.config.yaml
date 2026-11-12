@@ -1,0 +1,11 @@
+version: 1
+source: ../petstore.yaml
+overlays: [overlay.yaml]
+data: es-pe
+targets: [postman, bruno]
+output: collections
+environments:
+  mock:
+    variables:
+      baseUrl: http://127.0.0.1:4010
+    secrets: [token]
