@@ -1,0 +1,27 @@
+{
+  "name": "@abitech/openchasqui-validator-policies",
+  "version": "0.1.0",
+  "description": "Security and quality policies for API collections: secrets, real-looking data and untestable operations.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abitech-dev/abitech-openchasqui-cli.git",
+    "directory": "packages/validator-policies"
+  },
+  "dependencies": {
+    "@abitech/openchasqui-spec": "workspace:^"
+  }
+}
