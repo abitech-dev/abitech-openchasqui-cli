@@ -1,0 +1,27 @@
+{
+  "name": "@abitech/openchasqui-monorepo",
+  "private": true,
+  "description": "Generate, validate and distribute API collections from open standards.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@10.34.4",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "test": "vitest run",
+    "check": "biome check .",
+    "format": "biome check --write .",
+    "verify": "pnpm check && pnpm build && pnpm test",
+    "changeset": "changeset",
+    "release": "pnpm verify && changeset publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.7",
+    "@changesets/cli": "3.0.3",
+    "@types/node": "22.20.5",
+    "typescript": "6.0.3",
+    "vitest": "5.1.0"
+  }
+}

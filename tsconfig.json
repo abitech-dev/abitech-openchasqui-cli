@@ -1,0 +1,10 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/spec" },
+    { "path": "packages/core" },
+    { "path": "packages/loader-openapi" },
+    { "path": "packages/emitter-postman" },
+    { "path": "packages/cli" }
+  ]
+}
