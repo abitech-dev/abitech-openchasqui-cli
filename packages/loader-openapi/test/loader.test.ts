@@ -120,3 +120,45 @@ describe("openApiLoader", () => {
     expect(upload.requestBody?.content[0]?.mediaType).toBe("multipart/form-data");
   });
 });
+
+describe("openApiLoader with OpenChasqui extensions", () => {
+  const document = {
+    openapi: "3.1.0",
+    info: { title: "Catalog", version: "1" },
+    paths: {
+      "/banks": {
+        get: {
+          summary: "Listar bancos",
+          "x-openchasqui-folder": "Catálogos/Bancos",
+          "x-openchasqui-order": 2,
+        },
+        post: {
+          summary: "Crear banco",
+          "x-openchasqui-folder": "Catálogos/Bancos",
+          "x-openchasqui-order": 1,
+        },
+      },
+      "/banks/{id}": {
+        get: { summary: "Ver banco", "x-openchasqui-folder": "Catálogos/Bancos" },
+      },
+    },
+  };
+
+  it("uses x-openchasqui-folder as a nested folder path", async () => {
+    const loaded = await openApiLoader.load(document, context);
+    expect(loaded.operations.map((op) => op.folder)).toEqual([
+      ["Catálogos", "Bancos"],
+      ["Catálogos", "Bancos"],
+      ["Catálogos", "Bancos"],
+    ]);
+  });
+
+  it("orders by x-openchasqui-order first and puts unordered operations last", async () => {
+    const loaded = await openApiLoader.load(document, context);
+    expect(loaded.operations.map((op) => `${op.order} ${op.name}`)).toEqual([
+      "1 Crear banco",
+      "2 Listar bancos",
+      "3 Ver banco",
+    ]);
+  });
+});

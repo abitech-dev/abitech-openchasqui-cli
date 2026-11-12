@@ -81,7 +81,7 @@ function toOperation(
     method,
     path,
     name: displayName(operation, operationId, method, path),
-    folder: [tags[0] ?? firstSegment(path)],
+    folder: folderOf(operation, tags, path),
     order: 0,
     ...optional("summary", operation.summary),
     ...optional("description", operation.description),
@@ -191,15 +191,28 @@ function displayName(
   return operationId ?? `${method} ${path}`;
 }
 
+/** `x-openchasqui-folder` first, then the first tag, then the path. */
+function folderOf(operation: Json, tags: readonly string[], path: string): string[] {
+  const custom = operation["x-openchasqui-folder"];
+  if (typeof custom === "string" && custom.trim()) {
+    return custom
+      .split("/")
+      .map((part) => part.trim())
+      .filter(Boolean);
+  }
+  return [tags[0] ?? firstSegment(path)];
+}
+
 function firstSegment(path: string): string {
   return path.split("/").find((segment) => segment && !segment.startsWith("{")) ?? "root";
 }
 
-/** Orders operations by path and method inside each folder, starting at 1. */
+/** Orders by `x-openchasqui-order`, then path and method, from 1. */
 function withFoldersAndOrder(operations: Operation[]): Operation[] {
   const sorted = [...operations].sort(
     (a, b) =>
       a.folder.join("/").localeCompare(b.folder.join("/")) ||
+      explicitOrder(a) - explicitOrder(b) ||
       a.path.localeCompare(b.path) ||
       METHODS.indexOf(a.method) - METHODS.indexOf(b.method),
   );
@@ -210,6 +223,11 @@ function withFoldersAndOrder(operations: Operation[]): Operation[] {
     counters.set(folder, order);
     return { ...operation, order };
   });
+}
+
+function explicitOrder(operation: Operation): number {
+  const order = operation.extensions["x-openchasqui-order"];
+  return typeof order === "number" ? order : Number.MAX_SAFE_INTEGER;
 }
 
 function extensionsOf(value: Json): Record<string, unknown> {
