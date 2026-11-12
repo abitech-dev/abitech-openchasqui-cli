@@ -77,7 +77,7 @@ function root(model: ApiModel, defaultScheme: string | undefined, variables: Var
     opencollection: "1.0.0",
     info: { name: model.info.title, version: "1" },
     ...(defaultScheme
-      ? { request: { auth: auth(model.securitySchemes[defaultScheme], variables) } }
+      ? { request: withAuth(auth(model.securitySchemes[defaultScheme], variables)) }
       : {}),
     ...(model.info.description
       ? { docs: { content: model.info.description, type: "text/markdown" } }
@@ -126,7 +126,7 @@ function request(
       ...(params.length ? { params } : {}),
       ...(headers.length ? { headers } : {}),
       ...(body ? { body } : {}),
-      auth: itemAuth(model, operation, defaultScheme, variables),
+      ...withAuth(itemAuth(model, operation, defaultScheme, variables)),
     },
     ...(scripts ? { runtime: { scripts: [{ type: "tests", code: scripts }] } } : {}),
     settings: SETTINGS,
@@ -141,7 +141,7 @@ function itemAuth(
   variables: Variables,
 ): unknown {
   if (operation.security.length === 0) {
-    return { type: "none" };
+    return undefined;
   }
   if (defaultScheme && operation.security.includes(defaultScheme)) {
     return "inherit";
@@ -150,7 +150,12 @@ function itemAuth(
   return own ? auth(model.securitySchemes[own], variables) : "inherit";
 }
 
-function auth(scheme: SecurityScheme | undefined, variables: Variables): Json {
+/** Bruno rejects `type: none`; a request without `auth` is already public. */
+function withAuth(value: unknown): Json {
+  return value === undefined ? {} : { auth: value };
+}
+
+function auth(scheme: SecurityScheme | undefined, variables: Variables): Json | undefined {
   if (scheme?.type === "http" && scheme.scheme === "bearer") {
     return { type: "bearer", token: `{{${variables.token}}}` };
   }
@@ -162,7 +167,7 @@ function auth(scheme: SecurityScheme | undefined, variables: Variables): Json {
       placement: scheme.in === "query" ? "query" : "header",
     };
   }
-  return { type: "none" };
+  return undefined;
 }
 
 function requestBody(model: ApiModel, operation: Operation): Json | undefined {

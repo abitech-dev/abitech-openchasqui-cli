@@ -62,7 +62,7 @@ describe("brunoEmitter", () => {
 
   it("declares the most used scheme at the root and turns it off for public calls", () => {
     expect(file("opencollection.yml").request.auth).toEqual({ type: "bearer", token: "{{token}}" });
-    expect(file("store/Opening hours.yml").http.auth).toEqual({ type: "none" });
+    expect(file("store/Opening hours.yml").http).not.toHaveProperty("auth");
     expect(file("pets/List pets.yml").http.auth).toBe("inherit");
   });
 
