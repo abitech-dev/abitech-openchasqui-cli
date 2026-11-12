@@ -1,3 +1,9 @@
+import {
+  mostUsedScheme,
+  parameterValue,
+  resolveSchema,
+  slugify,
+} from "@abitech/openchasqui-plugin-kit";
 import type {
   ApiModel,
   EmitInput,
@@ -6,7 +12,6 @@ import type {
   EnvironmentDefinition,
   JsonSchema,
   Operation,
-  Parameter,
   SecurityScheme,
   TestCase,
   VariableNames,
@@ -86,11 +91,13 @@ function request(
   const enabled = query.filter((p) => p.required);
   const raw =
     `{{${variables.baseUrl}}}${toPostmanPath(operation.path)}` +
-    (enabled.length ? `?${enabled.map((p) => `${p.name}=${exampleOf(model, p)}`).join("&")}` : "");
+    (enabled.length
+      ? `?${enabled.map((p) => `${p.name}=${parameterValue(model, p)}`).join("&")}`
+      : "");
   const body = requestBody(model, operation);
   const headers = operation.parameters
     .filter((p) => p.in === "header")
-    .map((p) => ({ key: p.name, value: exampleOf(model, p), disabled: !p.required }));
+    .map((p) => ({ key: p.name, value: parameterValue(model, p), disabled: !p.required }));
   if (body?.mode === "raw") {
     headers.push({ key: "Content-Type", value: "application/json", disabled: false });
   }
@@ -112,7 +119,7 @@ function request(
           ? {
               query: query.map((p) => ({
                 key: p.name,
-                value: exampleOf(model, p),
+                value: parameterValue(model, p),
                 disabled: !p.required,
               })),
             }
@@ -121,7 +128,7 @@ function request(
           ? {
               variable: operation.parameters
                 .filter((p) => p.in === "path")
-                .map((p) => ({ key: p.name, value: exampleOf(model, p) })),
+                .map((p) => ({ key: p.name, value: parameterValue(model, p) })),
             }
           : {}),
       },
@@ -171,17 +178,6 @@ function auth(scheme: SecurityScheme | undefined, variables: Variables): Json {
   return { type: "noauth" };
 }
 
-/** The scheme most operations use becomes the collection default. */
-function mostUsedScheme(model: ApiModel): string | undefined {
-  const counts = new Map<string, number>();
-  for (const operation of model.operations) {
-    for (const name of operation.security) {
-      counts.set(name, (counts.get(name) ?? 0) + 1);
-    }
-  }
-  return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0]?.[0];
-}
-
 function requestBody(model: ApiModel, operation: Operation): Json | undefined {
   const content = operation.requestBody?.content ?? [];
   const json = content.find((c) => c.mediaType.includes("json"));
@@ -194,13 +190,13 @@ function requestBody(model: ApiModel, operation: Operation): Json | undefined {
   }
   const form = content.find((c) => c.mediaType === "multipart/form-data");
   if (form) {
-    const properties = resolve(model, form.schema).properties as
+    const properties = resolveSchema(model, form.schema).properties as
       | Record<string, JsonSchema>
       | undefined;
     return {
       mode: "formdata",
       formdata: Object.entries(properties ?? {}).map(([key, schema]) =>
-        resolve(model, schema).format === "binary"
+        resolveSchema(model, schema).format === "binary"
           ? { key, type: "file", src: [] }
           : { key, value: "", type: "text" },
       ),
@@ -256,51 +252,6 @@ function toEnvironment(model: ApiModel, environment: EnvironmentDefinition): Jso
 
 function toPostmanPath(path: string): string {
   return path.replace(/\{([^}]+)\}/g, ":$1");
-}
-
-/** Without an example, a value of the right type keeps the request valid. */
-function exampleOf(model: ApiModel, parameter: Parameter): string {
-  const schema = resolve(model, parameter.schema);
-  const enumeration = Array.isArray(schema.enum) ? schema.enum : [];
-  const value = parameter.example ?? schema.example ?? schema.default ?? enumeration[0];
-  if (value !== undefined) {
-    return String(value);
-  }
-  switch (schema.type) {
-    case "integer":
-    case "number":
-      return "1";
-    case "boolean":
-      return "true";
-    default:
-      return FORMAT_EXAMPLES[String(schema.format)] ?? "string";
-  }
-}
-
-const FORMAT_EXAMPLES: Readonly<Record<string, string>> = {
-  date: "2026-01-01",
-  "date-time": "2026-01-01T00:00:00Z",
-  uuid: "00000000-0000-0000-0000-000000000000",
-  email: "user@example.com",
-};
-
-function resolve(model: ApiModel, schema: JsonSchema | undefined, depth = 0): JsonSchema {
-  const ref = schema?.$ref;
-  if (typeof ref === "string" && ref.startsWith("#/components/schemas/") && depth < 20) {
-    return resolve(model, model.schemas[ref.slice("#/components/schemas/".length)], depth + 1);
-  }
-  return schema ?? {};
-}
-
-function slugify(text: string): string {
-  return (
-    text
-      .normalize("NFD")
-      .replace(/\p{Diacritic}/gu, "")
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-|-$/g, "") || "api"
-  );
 }
 
 function toJson(value: unknown): string {
