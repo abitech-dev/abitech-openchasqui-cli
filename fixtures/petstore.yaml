@@ -1,0 +1,192 @@
+openapi: 3.1.0
+info:
+  title: Petstore
+  version: 1.2.0
+  description: Fixture that covers the cases the loader must handle.
+servers:
+  - url: https://api.example.com/v1
+security:
+  - bearer: []
+tags:
+  - name: pets
+  - name: store
+paths:
+  /pets:
+    get:
+      tags: [pets]
+      summary: List pets
+      operationId: listPets
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - name: species
+          in: query
+          schema:
+            type: string
+            enum: [dog, cat]
+      responses:
+        "200":
+          description: The pets.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Pet"
+    post:
+      tags: [pets]
+      summary: Create a pet
+      operationId: createPet
+      requestBody:
+        $ref: "#/components/requestBodies/NewPet"
+      responses:
+        "201":
+          $ref: "#/components/responses/PetCreated"
+  /pets/{petId}:
+    parameters:
+      - name: petId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: X-Trace
+        in: header
+        schema:
+          type: string
+    get:
+      tags: [pets]
+      operationId: showPet
+      parameters:
+        - name: X-Trace
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: One pet.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pet"
+    delete:
+      tags: [pets]
+      summary: Delete a pet
+      deprecated: true
+      security:
+        - bearer: []
+        - apiKey: []
+      responses:
+        "204":
+          description: Deleted.
+  /pets/{petId}/photo:
+    post:
+      tags: [pets]
+      summary: Upload a photo
+      parameters:
+        - name: petId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: Uploaded.
+  /store/hours:
+    get:
+      tags: [store]
+      summary: Opening hours
+      security: []
+      x-cache-seconds: 60
+      responses:
+        "200":
+          description: Hours.
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                weekday:
+                  value:
+                    open: "09:00"
+                    close: "18:00"
+  /health:
+    get:
+      security: []
+      responses:
+        "200":
+          description: Alive.
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        maximum: 100
+      example: 20
+  requestBodies:
+    NewPet:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/NewPet"
+          example:
+            name: Fido
+            species: dog
+  responses:
+    PetCreated:
+      description: Created.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Pet"
+  schemas:
+    NewPet:
+      type: object
+      required: [name, species]
+      properties:
+        name:
+          type: string
+          maxLength: 60
+        species:
+          type: string
+          enum: [dog, cat]
+    Pet:
+      allOf:
+        - $ref: "#/components/schemas/NewPet"
+        - type: object
+          required: [id]
+          properties:
+            id:
+              type: integer
+            owner:
+              $ref: "#/components/schemas/Owner"
+    Owner:
+      type: object
+      properties:
+        name:
+          type: string
+        pets:
+          type: array
+          items:
+            $ref: "#/components/schemas/Pet"

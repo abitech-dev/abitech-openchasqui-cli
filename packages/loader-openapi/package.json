@@ -1,0 +1,30 @@
+{
+  "name": "@abitech/openchasqui-loader-openapi",
+  "version": "0.1.0",
+  "description": "Loads OpenAPI 3.0 and 3.1 documents into the OpenChasqui model.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abitech-dev/abitech-openchasqui-cli.git",
+    "directory": "packages/loader-openapi"
+  },
+  "dependencies": {
+    "@abitech/openchasqui-spec": "workspace:^"
+  },
+  "devDependencies": {
+    "@abitech/openchasqui-core": "workspace:^"
+  }
+}
