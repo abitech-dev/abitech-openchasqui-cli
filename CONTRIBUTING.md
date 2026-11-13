@@ -38,6 +38,13 @@ project license, as described in the
 - Emitters are checked against reference files in `test/__golden__`. Update
   them with `pnpm vitest run -u` and review the diff before committing.
 
+## Releases
+
+Nobody publishes from a laptop. When changesets reach `main`, the release
+workflow opens a "version packages" pull request; merging it publishes every
+package to npm through trusted publishing, with provenance, and creates the
+GitHub release. All packages share one version.
+
 ## Code of conduct
 
 Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md).
