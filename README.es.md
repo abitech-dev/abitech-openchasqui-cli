@@ -124,13 +124,13 @@ test("matches the contract", function () {
 ```
 
 Con `data: es-pe`, los ejemplos que faltan se llenan con datos de prueba
-peruanos. Cada objeto mantiene una persona y un lugar, y el RUC lleva un dígito
-verificador SUNAT válido:
+peruanos. Las personas llevan sus dos apellidos, cada objeto mantiene una persona
+y un lugar, y el RUC lleva un dígito verificador SUNAT válido:
 
 ```json
 {
   "nombre": "Carmen",
-  "apellido": "Cárdenas",
+  "apellidos": "Cárdenas Vásquez",
   "correo": "carmen.cardenas@example.com",
   "dni": "47711067",
   "ruc": "20581968508",

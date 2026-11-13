@@ -122,14 +122,14 @@ test("matches the contract", function () {
 });
 ```
 
-With `data: es-pe`, missing examples are filled with Peruvian test data. One
-object keeps one person and one place, and the RUC carries a valid SUNAT check
-digit:
+With `data: es-pe`, missing examples are filled with Peruvian test data. People
+have both surnames, each object keeps one person and one place, and the RUC
+carries a valid SUNAT check digit:
 
 ```json
 {
   "nombre": "Carmen",
-  "apellido": "Cárdenas",
+  "apellidos": "Cárdenas Vásquez",
   "correo": "carmen.cardenas@example.com",
   "dni": "47711067",
   "ruc": "20581968508",
