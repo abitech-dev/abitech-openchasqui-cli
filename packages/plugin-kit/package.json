@@ -1,6 +1,6 @@
 {
   "name": "@abitechdev/openchasqui-plugin-kit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Utilidades de esquemas y nombres para los plugins de OpenChasqui.",
   "keywords": [
     "openapi",

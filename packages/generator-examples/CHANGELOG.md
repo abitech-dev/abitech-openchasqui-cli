@@ -1,5 +1,15 @@
 # @abitechdev/openchasqui-generator-examples
 
+## 0.1.2
+
+### Patch Changes
+
+- cccf0be: Spanish package descriptions for npm search.
+- Updated dependencies [cccf0be]
+  - @abitechdev/openchasqui-data-es-pe@0.1.2
+  - @abitechdev/openchasqui-plugin-kit@0.1.2
+  - @abitechdev/openchasqui-spec@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
