@@ -124,19 +124,21 @@ test("matches the contract", function () {
 ```
 
 Con `data: es-pe`, los ejemplos que faltan se llenan con datos de prueba
-peruanos. Las personas llevan sus dos apellidos, cada objeto mantiene una persona
-y un lugar, y el RUC lleva un dígito verificador SUNAT válido:
+peruanos con la forma de una consulta a RENIEC: uno o dos nombres, los dos
+apellidos, una persona y un lugar por objeto, y un RUC con dígito verificador
+SUNAT válido:
 
 ```json
 {
-  "nombre": "Carmen",
-  "apellidos": "Cárdenas Vásquez",
-  "correo": "carmen.cardenas@example.com",
-  "dni": "47711067",
-  "ruc": "20581968508",
-  "celular": "942925340",
-  "ubigeo": "100101",
-  "distrito": "Huánuco"
+  "nombres": "Isabel Lucía",
+  "apellidoPaterno": "Gutiérrez",
+  "apellidoMaterno": "Castillo",
+  "correo": "isabel.gutierrez@example.com",
+  "dni": "11067581",
+  "ruc": "20968504291",
+  "celular": "925340375",
+  "ubigeo": "170101",
+  "distrito": "Tambopata"
 }
 ```
 

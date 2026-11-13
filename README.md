@@ -122,20 +122,21 @@ test("matches the contract", function () {
 });
 ```
 
-With `data: es-pe`, missing examples are filled with Peruvian test data. People
-have both surnames, each object keeps one person and one place, and the RUC
-carries a valid SUNAT check digit:
+With `data: es-pe`, missing examples are filled with Peruvian test data shaped
+like a RENIEC lookup: one or two given names, both surnames, one person and one
+place per object, and a RUC with a valid SUNAT check digit:
 
 ```json
 {
-  "nombre": "Carmen",
-  "apellidos": "Cárdenas Vásquez",
-  "correo": "carmen.cardenas@example.com",
-  "dni": "47711067",
-  "ruc": "20581968508",
-  "celular": "942925340",
-  "ubigeo": "100101",
-  "distrito": "Huánuco"
+  "nombres": "Isabel Lucía",
+  "apellidoPaterno": "Gutiérrez",
+  "apellidoMaterno": "Castillo",
+  "correo": "isabel.gutierrez@example.com",
+  "dni": "11067581",
+  "ruc": "20968504291",
+  "celular": "925340375",
+  "ubigeo": "170101",
+  "distrito": "Tambopata"
 }
 ```
 
