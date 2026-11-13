@@ -6,6 +6,7 @@ import {
   person,
   type Random,
   ruc,
+  type Ubigeo,
   ubigeo,
 } from "@abitechdev/openchasqui-data-es-pe";
 import { flattenAllOf, resolveSchema } from "@abitechdev/openchasqui-plugin-kit";
@@ -26,6 +27,7 @@ const GENERIC_PERSON: Person = {
 export class ExampleBuilder {
   private readonly random: Random;
   private person: Person | undefined;
+  private place: Ubigeo | undefined;
 
   constructor(
     private readonly model: ApiModel,
@@ -82,8 +84,9 @@ export class ExampleBuilder {
   }
 
   private object(schema: JsonSchema, depth: number, seen: Set<string>): Record<string, unknown> {
-    const previous = this.person;
+    const previous = { person: this.person, place: this.place };
     this.person = undefined;
+    this.place = undefined;
     const properties = (schema.properties as Record<string, JsonSchema> | undefined) ?? {};
     const result: Record<string, unknown> = {};
     for (const [key, child] of Object.entries(properties)) {
@@ -92,7 +95,8 @@ export class ExampleBuilder {
         result[key] = value;
       }
     }
-    this.person = previous;
+    this.person = previous.person;
+    this.place = previous.place;
     return result;
   }
 
@@ -111,9 +115,9 @@ export class ExampleBuilder {
       if (/dni|documentnumber|numberdocument|numerodocumento|nrodocumento/.test(key))
         return dni(this.random);
       if (/phone|celular|telefono|movil|mobile/.test(key)) return mobilePhone(this.random);
-      if (/ubigeo/.test(key)) return ubigeo(this.random).code;
-      if (/departamento|department/.test(key)) return ubigeo(this.random).department;
-      if (/distrito|district/.test(key)) return ubigeo(this.random).district;
+      if (/ubigeo/.test(key)) return this.currentPlace().code;
+      if (/departamento|department/.test(key)) return this.currentPlace().department;
+      if (/distrito|district/.test(key)) return this.currentPlace().district;
     }
     if (/razonsocial|businessname|company|empresa/.test(key)) return "Example S.A.C.";
     if (/fullname|nombrecompleto/.test(key)) return someone.fullName;
@@ -130,6 +134,11 @@ export class ExampleBuilder {
     }
     this.person ??= person(this.random);
     return this.person;
+  }
+
+  private currentPlace(): Ubigeo {
+    this.place ??= ubigeo(this.random);
+    return this.place;
   }
 }
 

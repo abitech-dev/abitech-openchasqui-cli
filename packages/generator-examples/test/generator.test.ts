@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { parseDocument } from "@abitechdev/openchasqui-core";
-import { isValidRuc } from "@abitechdev/openchasqui-data-es-pe";
+import { DEPARTMENT_CAPITALS, isValidRuc } from "@abitechdev/openchasqui-data-es-pe";
 import { openApiLoader } from "@abitechdev/openchasqui-loader-openapi";
 import type { ApiModel, Operation } from "@abitechdev/openchasqui-spec";
 import { describe, expect, it } from "vitest";
@@ -38,6 +38,8 @@ const customer = {
                   ruc: { type: "string" },
                   telefono: { type: "string" },
                   ubigeo: { type: "string" },
+                  departamento: { type: "string" },
+                  distrito: { type: "string" },
                   codigo: { type: "string", maxLength: 3 },
                 },
               },
@@ -66,7 +68,7 @@ describe("examplesGenerator", () => {
     expect(op(model, "listPets").parameters[1]?.example).toBe("dog");
   });
 
-  it("builds Peruvian data that keeps one person per object", async () => {
+  it("builds Peruvian data that keeps one person and place per object", async () => {
     const loaded = await openApiLoader.load(customer, { reader, options: {} });
     const model = await examplesGenerator.generate(loaded, { reader, options: { data: "es-pe" } });
     const body = op(model, "createCustomer").requestBody?.content[0]?.example as Record<
@@ -77,7 +79,11 @@ describe("examplesGenerator", () => {
     expect(body.dni).toMatch(/^[1-9]\d{7}$/);
     expect(isValidRuc(body.ruc ?? "")).toBe(true);
     expect(body.telefono).toMatch(/^9\d{8}$/);
-    expect(body.ubigeo).toMatch(/^\d{6}$/);
+    expect(DEPARTMENT_CAPITALS).toContainEqual({
+      code: body.ubigeo,
+      department: body.departamento,
+      district: body.distrito,
+    });
     expect(body.correo?.endsWith("@example.com")).toBe(true);
     expect(
       body.correo?.startsWith(
