@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="513" viewBox="0 0 760 513" role="img" aria-label="openchasqui generate followed by a Bruno run with 20 of 20 tests passing">
+<rect x="0.5" y="0.5" width="759" height="512" rx="10" fill="#0d1117" stroke="#30363d"/>
+<circle cx="22" cy="20" r="6" fill="#30363d"/><circle cx="42" cy="20" r="6" fill="#30363d"/><circle cx="62" cy="20" r="6" fill="#30363d"/>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14">
+<text x="22" y="58" xml:space="preserve"><tspan fill="#f0883e">$ </tspan><tspan fill="#e6edf3">npx @abitechdev/openchasqui generate</tspan></text>
+<text x="22" y="79" xml:space="preserve"><tspan fill="#8b949e">postman: </tspan><tspan fill="#e6edf3">2 files in collections/postman</tspan></text>
+<text x="22" y="100" xml:space="preserve"><tspan fill="#8b949e">bruno: </tspan><tspan fill="#e6edf3">12 files in collections/bruno</tspan></text>
+<text x="22" y="121" xml:space="preserve"></text>
+<text x="22" y="142" xml:space="preserve"><tspan fill="#f0883e">$ </tspan><tspan fill="#e6edf3">cd collections/bruno &amp;&amp; npx @usebruno/cli run --env mock</tspan></text>
+<text x="22" y="163" xml:space="preserve"><tspan fill="#79c0ff">Mascotas/Listar mascotas</tspan><tspan fill="#e6edf3"> (200 OK)</tspan><tspan fill="#8b949e"> - 76 ms</tspan></text>
+<text x="22" y="184" xml:space="preserve"><tspan fill="#8b949e">Tests</tspan></text>
+<text x="22" y="205" xml:space="preserve"><tspan fill="#3fb950">   ✓ </tspan><tspan fill="#e6edf3">status is 200</tspan></text>
+<text x="22" y="226" xml:space="preserve"><tspan fill="#3fb950">   ✓ </tspan><tspan fill="#e6edf3">content type is application/json</tspan></text>
+<text x="22" y="247" xml:space="preserve"><tspan fill="#3fb950">   ✓ </tspan><tspan fill="#e6edf3">matches the contract</tspan></text>
+<text x="22" y="268" xml:space="preserve"><tspan fill="#3fb950">   ✓ </tspan><tspan fill="#e6edf3">responds in under 5000 ms</tspan></text>
+<text x="22" y="289" xml:space="preserve"><tspan fill="#79c0ff">pets/Create a pet</tspan><tspan fill="#e6edf3"> (201 Created)</tspan><tspan fill="#8b949e"> - 18 ms</tspan></text>
+<text x="22" y="310" xml:space="preserve"><tspan fill="#8b949e">Tests</tspan></text>
+<text x="22" y="331" xml:space="preserve"><tspan fill="#3fb950">   ✓ </tspan><tspan fill="#e6edf3">status is 201</tspan></text>
+<text x="22" y="352" xml:space="preserve"><tspan fill="#3fb950">   ✓ </tspan><tspan fill="#e6edf3">content type is application/json</tspan></text>
+<text x="22" y="373" xml:space="preserve"><tspan fill="#3fb950">   ✓ </tspan><tspan fill="#e6edf3">matches the contract</tspan></text>
+<text x="22" y="394" xml:space="preserve"><tspan fill="#3fb950">   ✓ </tspan><tspan fill="#e6edf3">responds in under 5000 ms</tspan></text>
+<text x="22" y="415" xml:space="preserve"><tspan fill="#8b949e">…</tspan></text>
+<text x="22" y="436" xml:space="preserve"><tspan fill="#8b949e">Status    </tspan><tspan fill="#3fb950">✓ PASS</tspan></text>
+<text x="22" y="457" xml:space="preserve"><tspan fill="#8b949e">Requests  </tspan><tspan fill="#e6edf3">6 (6 Passed)</tspan></text>
+<text x="22" y="478" xml:space="preserve"><tspan fill="#8b949e">Tests     </tspan><tspan fill="#e6edf3">20/20</tspan></text>
+</g>
+</svg>
