@@ -13,7 +13,8 @@ npx @abitechdev/openchasqui verify     # fails when collections are out of date
 ```
 
 Configuration, overlays and policies are described in the
-[main README](https://github.com/abitech-dev/abitech-openchasqui-cli#readme).
+[main README](https://github.com/abitech-dev/abitech-openchasqui-cli/blob/main/README.en.md)
+([documentación en español](https://github.com/abitech-dev/abitech-openchasqui-cli#readme)).
 
 ## License
 

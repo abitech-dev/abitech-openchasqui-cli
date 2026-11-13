@@ -2,7 +2,8 @@
 
 Security and quality policies for API collections: secrets, real-looking data and untestable operations.
 
-Part of [OpenChasqui](https://github.com/abitech-dev/abitech-openchasqui-cli#readme), which generates API collections from
+Part of [OpenChasqui](https://github.com/abitech-dev/abitech-openchasqui-cli/blob/main/README.en.md)
+([en español](https://github.com/abitech-dev/abitech-openchasqui-cli#readme)), which generates API collections from
 OpenAPI. Most projects only need the command line,
 [`@abitechdev/openchasqui`](https://www.npmjs.com/package/@abitechdev/openchasqui).
 
