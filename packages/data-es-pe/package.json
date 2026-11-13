@@ -1,6 +1,6 @@
 {
   "name": "@abitechdev/openchasqui-data-es-pe",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Datos de prueba peruanos sintéticos y deterministas: nombres, DNI, RUC con dígito verificador SUNAT, celulares y ubigeo.",
   "keywords": [
     "peru",
