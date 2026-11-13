@@ -32,7 +32,9 @@ const customer = {
                 type: "object",
                 properties: {
                   nombre: { type: "string" },
-                  apellido: { type: "string" },
+                  apellidos: { type: "string" },
+                  apellidoPaterno: { type: "string" },
+                  apellidoMaterno: { type: "string" },
                   correo: { type: "string" },
                   dni: { type: "string" },
                   ruc: { type: "string" },
@@ -76,6 +78,7 @@ describe("examplesGenerator", () => {
       string
     >;
 
+    expect(body.apellidos).toBe(`${body.apellidoPaterno} ${body.apellidoMaterno}`);
     expect(body.dni).toMatch(/^[1-9]\d{7}$/);
     expect(isValidRuc(body.ruc ?? "")).toBe(true);
     expect(body.telefono).toMatch(/^9\d{8}$/);

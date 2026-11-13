@@ -19,6 +19,7 @@ const GENERIC_PERSON: Person = {
   firstName: "Jane",
   paternalSurname: "Doe",
   maternalSurname: "Roe",
+  surnames: "Doe",
   fullName: "Jane Doe",
   email: "jane.doe@example.com",
 };
@@ -121,7 +122,9 @@ export class ExampleBuilder {
     }
     if (/razonsocial|businessname|company|empresa/.test(key)) return "Example S.A.C.";
     if (/fullname|nombrecompleto/.test(key)) return someone.fullName;
-    if (/lastname|surname|apellido/.test(key)) return someone.paternalSurname;
+    if (/materno|maternal/.test(key)) return someone.maternalSurname;
+    if (/paterno|paternal/.test(key)) return someone.paternalSurname;
+    if (/lastname|surname|apellido/.test(key)) return someone.surnames;
     if (/name|nombre/.test(key)) return someone.firstName;
     if (/address|direccion/.test(key)) return "Av. Example 123";
     if (/date|fecha/.test(key)) return "2026-01-15";

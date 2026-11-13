@@ -50,6 +50,8 @@ export interface Person {
   readonly firstName: string;
   readonly paternalSurname: string;
   readonly maternalSurname: string;
+  /** Both surnames, as a Peruvian form asks for them. */
+  readonly surnames: string;
   readonly fullName: string;
   readonly email: string;
 }
@@ -58,12 +60,14 @@ export interface Person {
 export function person(random: Random): Person {
   const firstName = random.pick(FIRST_NAMES);
   const paternalSurname = random.pick(SURNAMES);
-  const maternalSurname = random.pick(SURNAMES);
+  const maternalSurname = random.pick(SURNAMES.filter((surname) => surname !== paternalSurname));
+  const surnames = `${paternalSurname} ${maternalSurname}`;
   return {
     firstName,
     paternalSurname,
     maternalSurname,
-    fullName: `${firstName} ${paternalSurname} ${maternalSurname}`,
+    surnames,
+    fullName: `${firstName} ${surnames}`,
     email: `${ascii(firstName)}.${ascii(paternalSurname)}@example.com`,
   };
 }

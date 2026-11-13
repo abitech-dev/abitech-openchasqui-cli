@@ -52,9 +52,15 @@ describe("generators", () => {
     }
   });
 
-  it("gives people two surnames and an email on a reserved domain", () => {
+  it("gives people two different surnames and an email on a reserved domain", () => {
+    const random = createRandom("person");
+    for (let i = 0; i < 200; i++) {
+      const { paternalSurname, maternalSurname, surnames } = person(random);
+      expect(paternalSurname).not.toBe(maternalSurname);
+      expect(surnames).toBe(`${paternalSurname} ${maternalSurname}`);
+    }
     const someone = person(createRandom("person"));
-    expect(someone.fullName.split(" ")).toHaveLength(3);
+    expect(someone.fullName).toBe(`${someone.firstName} ${someone.surnames}`);
     expect(someone.email).toMatch(/^[a-z]+\.[a-z]+@example\.com$/);
   });
 
