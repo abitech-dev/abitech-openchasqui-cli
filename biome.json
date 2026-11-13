@@ -1,5 +1,10 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.6.7/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
   "files": {
     "includes": [
       "**",
@@ -26,7 +31,9 @@
   },
   "overrides": [
     {
-      "includes": ["packages/*/test/**"],
+      "includes": [
+        "packages/*/test/**"
+      ],
       "linter": {
         "rules": {
           "suspicious": {
