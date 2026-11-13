@@ -1,7 +1,7 @@
 {
   "name": "@abitechdev/openchasqui-spec",
   "version": "0.1.1",
-  "description": "Canonical API model, plugin contract and configuration types for OpenChasqui.",
+  "description": "Modelo canónico de la API, contrato de plugins y tipos de configuración de OpenChasqui.",
   "keywords": [
     "openapi",
     "api-model",

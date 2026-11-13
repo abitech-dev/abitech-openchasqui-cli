@@ -1,7 +1,7 @@
 {
   "name": "@abitechdev/openchasqui-monorepo",
   "private": true,
-  "description": "Generate, validate and distribute API collections from open standards.",
+  "description": "Monorepo de OpenChasqui: colecciones de API desde estándares abiertos.",
   "license": "Apache-2.0",
   "type": "module",
   "packageManager": "pnpm@10.34.4",

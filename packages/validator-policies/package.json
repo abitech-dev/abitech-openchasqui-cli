@@ -1,7 +1,7 @@
 {
   "name": "@abitechdev/openchasqui-validator-policies",
   "version": "0.1.1",
-  "description": "Security and quality policies for API collections: secrets, real-looking data and untestable operations.",
+  "description": "Políticas de seguridad y calidad para colecciones de API: secretos, datos que parecen reales y operaciones sin respuesta exitosa.",
   "keywords": [
     "openapi",
     "api-security",

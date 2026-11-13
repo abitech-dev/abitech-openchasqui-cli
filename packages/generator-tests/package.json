@@ -1,7 +1,7 @@
 {
   "name": "@abitechdev/openchasqui-generator-tests",
   "version": "0.1.1",
-  "description": "Generates status, content type, schema and response time tests from the contract.",
+  "description": "Genera pruebas de estado, tipo de contenido, esquema y tiempo de respuesta desde el contrato.",
   "keywords": [
     "openapi",
     "contract-testing",

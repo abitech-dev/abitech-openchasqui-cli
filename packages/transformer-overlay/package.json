@@ -1,7 +1,7 @@
 {
   "name": "@abitechdev/openchasqui-transformer-overlay",
   "version": "0.1.1",
-  "description": "Applies OpenAPI Overlay 1.0 documents before loading the contract.",
+  "description": "Aplica documentos OpenAPI Overlay 1.0 antes de cargar el contrato.",
   "keywords": [
     "openapi",
     "openapi-overlay",

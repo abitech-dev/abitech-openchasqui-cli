@@ -1,7 +1,7 @@
 {
   "name": "@abitechdev/openchasqui-emitter-bruno",
   "version": "0.1.1",
-  "description": "Emits Bruno collections in the OpenCollection YAML format, with environments and tests.",
+  "description": "Genera colecciones de Bruno en formato OpenCollection YAML, con entornos y pruebas.",
   "keywords": [
     "openapi",
     "bruno",

@@ -1,7 +1,7 @@
 {
   "name": "@abitechdev/openchasqui-emitter-postman",
   "version": "0.1.1",
-  "description": "Emits Postman Collection v2.1 with environments and tests.",
+  "description": "Genera colecciones Postman v2.1 con entornos y pruebas.",
   "keywords": [
     "openapi",
     "postman",
