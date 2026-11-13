@@ -90,9 +90,8 @@ flowchart LR
   E --> G[Bruno OpenCollection]
 ```
 
-Each step is a plugin with a versioned contract. The pipeline sorts its output
-and seeds its random data by operation, so the same contract always produces
-the same bytes and `verify` can compare them in CI.
+Each step is a plugin. The same contract always produces the same files, so
+`verify` catches any outdated collection in CI.
 
 ## What you get
 
@@ -112,29 +111,8 @@ collections/
         └── Opening hours.yml
 ```
 
-Each request carries its own tests. This is the Bruno script generated for
-`GET /pets`, trimmed:
-
-```js
-test("status is 200", function () {
-  expect(res.getStatus()).to.be.oneOf([200]);
-});
-
-test("matches the contract", function () {
-  const Ajv = require("ajv");
-  const ajv = new Ajv({ strict: false, allErrors: true });
-  const valid = ajv.validate(
-    {
-      type: "array",
-      items: {
-        /* Pet */
-      },
-    },
-    res.getBody(),
-  );
-  expect(valid, ajv.errorsText()).to.equal(true);
-});
-```
+Each request comes with its tests: status code, content type, response schema
+and response time.
 
 With `data: es-pe`, missing examples are filled with Peruvian test data shaped
 like a RENIEC lookup: one or two given names, both surnames, one person and one
@@ -217,6 +195,11 @@ actions:
 
 ## Packages
 
+The CLI installs everything it needs; these are the packages behind it.
+
+<details>
+<summary>Show the 12 packages</summary>
+
 | Package                                                                       | Purpose                                      |
 | ----------------------------------------------------------------------------- | -------------------------------------------- |
 | [`@abitechdev/openchasqui`](packages/cli)                                     | Command line                                 |
@@ -231,6 +214,8 @@ actions:
 | [`@abitechdev/openchasqui-emitter-postman`](packages/emitter-postman)         | Postman Collection v2.1                      |
 | [`@abitechdev/openchasqui-emitter-bruno`](packages/emitter-bruno)             | Bruno, OpenCollection YAML                   |
 | [`@abitechdev/openchasqui-data-es-pe`](packages/data-es-pe)                   | Peruvian test data: DNI, RUC, phones, ubigeo |
+
+</details>
 
 ## Roadmap
 
