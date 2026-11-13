@@ -1,7 +1,14 @@
 {
   "name": "@abitechdev/openchasqui-core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pipeline that loads, transforms, validates and emits API collections.",
+  "keywords": [
+    "openapi",
+    "api-collections",
+    "pipeline",
+    "plugins",
+    "openchasqui"
+  ],
   "license": "Apache-2.0",
   "type": "module",
   "exports": {

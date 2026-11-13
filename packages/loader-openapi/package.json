@@ -1,7 +1,14 @@
 {
   "name": "@abitechdev/openchasqui-loader-openapi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Loads OpenAPI 3.0 and 3.1 documents into the OpenChasqui model.",
+  "keywords": [
+    "openapi",
+    "openapi3",
+    "swagger",
+    "loader",
+    "openchasqui"
+  ],
   "license": "Apache-2.0",
   "type": "module",
   "exports": {

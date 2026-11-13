@@ -1,7 +1,15 @@
 {
   "name": "@abitechdev/openchasqui-generator-examples",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fills missing parameter and body examples with deterministic synthetic data.",
+  "keywords": [
+    "openapi",
+    "examples",
+    "fake-data",
+    "test-data",
+    "peru",
+    "openchasqui"
+  ],
   "license": "Apache-2.0",
   "type": "module",
   "exports": {

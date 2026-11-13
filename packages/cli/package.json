@@ -1,7 +1,18 @@
 {
   "name": "@abitechdev/openchasqui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate, validate and distribute API collections from OpenAPI.",
+  "keywords": [
+    "openapi",
+    "postman",
+    "bruno",
+    "api-testing",
+    "contract-testing",
+    "openapi-overlay",
+    "cli",
+    "peru",
+    "openchasqui"
+  ],
   "license": "Apache-2.0",
   "type": "module",
   "bin": {
@@ -36,5 +47,8 @@
     "@abitechdev/openchasqui-spec": "workspace:^",
     "@abitechdev/openchasqui-transformer-overlay": "workspace:^",
     "@abitechdev/openchasqui-validator-policies": "workspace:^"
+  },
+  "scripts": {
+    "prepack": "node ../../scripts/readme-npm.mjs"
   }
 }

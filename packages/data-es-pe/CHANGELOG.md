@@ -1,5 +1,11 @@
 # @abitechdev/openchasqui-data-es-pe
 
+## 0.1.1
+
+### Patch Changes
+
+- Spanish READMEs with installation and usage examples, and npm keywords.
+
 ## 0.1.0
 
 ### Minor Changes

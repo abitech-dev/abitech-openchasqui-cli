@@ -5,5 +5,10 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": []
+  "ignore": [],
+  "fixed": [
+    [
+      "@abitechdev/*"
+    ]
+  ]
 }

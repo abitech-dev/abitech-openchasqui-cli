@@ -1,5 +1,13 @@
 # @abitechdev/openchasqui-transformer-overlay
 
+## 0.1.1
+
+### Patch Changes
+
+- Spanish READMEs with installation and usage examples, and npm keywords.
+- Updated dependencies
+  - @abitechdev/openchasqui-spec@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes

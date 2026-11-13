@@ -1,7 +1,14 @@
 {
   "name": "@abitechdev/openchasqui-validator-policies",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Security and quality policies for API collections: secrets, real-looking data and untestable operations.",
+  "keywords": [
+    "openapi",
+    "api-security",
+    "linter",
+    "policies",
+    "openchasqui"
+  ],
   "license": "Apache-2.0",
   "type": "module",
   "exports": {

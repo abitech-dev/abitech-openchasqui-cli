@@ -1,5 +1,15 @@
 # @abitechdev/openchasqui-generator-examples
 
+## 0.1.1
+
+### Patch Changes
+
+- Spanish READMEs with installation and usage examples, and npm keywords.
+- Updated dependencies
+  - @abitechdev/openchasqui-data-es-pe@0.1.1
+  - @abitechdev/openchasqui-plugin-kit@0.1.1
+  - @abitechdev/openchasqui-spec@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes

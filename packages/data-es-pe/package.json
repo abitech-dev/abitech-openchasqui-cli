@@ -1,7 +1,18 @@
 {
   "name": "@abitechdev/openchasqui-data-es-pe",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Deterministic synthetic Peruvian test data: names, DNI, RUC with SUNAT check digit, phones and ubigeo.",
+  "keywords": [
+    "peru",
+    "test-data",
+    "fake-data",
+    "dni",
+    "ruc",
+    "sunat",
+    "reniec",
+    "ubigeo",
+    "openchasqui"
+  ],
   "license": "Apache-2.0",
   "type": "module",
   "exports": {

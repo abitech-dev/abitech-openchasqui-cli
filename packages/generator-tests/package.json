@@ -1,7 +1,14 @@
 {
   "name": "@abitechdev/openchasqui-generator-tests",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generates status, content type, schema and response time tests from the contract.",
+  "keywords": [
+    "openapi",
+    "contract-testing",
+    "api-testing",
+    "json-schema",
+    "openchasqui"
+  ],
   "license": "Apache-2.0",
   "type": "module",
   "exports": {

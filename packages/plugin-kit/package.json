@@ -1,7 +1,14 @@
 {
   "name": "@abitechdev/openchasqui-plugin-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Schema and naming helpers shared by OpenChasqui plugins.",
+  "keywords": [
+    "openapi",
+    "json-schema",
+    "plugin",
+    "helpers",
+    "openchasqui"
+  ],
   "license": "Apache-2.0",
   "type": "module",
   "exports": {
