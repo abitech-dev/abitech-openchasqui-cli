@@ -18,6 +18,7 @@
 </p>
 
 <p align="center">
+  <a href="#instalación">Instalación</a> ·
   <a href="#inicio-rápido">Inicio rápido</a> ·
   <a href="#configuración">Configuración</a> ·
   <a href="#overlays">Overlays</a> ·
@@ -61,9 +62,23 @@ Elige una o varias en `targets`; `targets: [bruno]` genera solo Bruno.
 
 Cada herramienta es un plugin emisor; sumar una no toca el núcleo.
 
+## Instalación
+
+Requiere Node.js 22 o superior. Instálalo como dependencia de desarrollo del
+proyecto que tiene el contrato:
+
+```bash
+npm i -D @abitechdev/openchasqui
+pnpm add -D @abitechdev/openchasqui
+yarn add -D @abitechdev/openchasqui
+```
+
+Así el comando queda como `npx openchasqui`. También funciona sin instalar,
+con `npx @abitechdev/openchasqui`.
+
 ## Inicio rápido
 
-Requiere Node.js 22 o superior. En la carpeta de tu `openapi.yaml`:
+En la carpeta de tu `openapi.yaml`:
 
 ```bash
 npx @abitechdev/openchasqui init       # crea openchasqui.config.yaml
