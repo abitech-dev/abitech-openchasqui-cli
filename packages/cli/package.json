@@ -14,7 +14,9 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "NOTICE"
   ],
   "engines": {
     "node": ">=22"

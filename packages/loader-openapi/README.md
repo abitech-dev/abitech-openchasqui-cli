@@ -1,0 +1,11 @@
+# @abitechdev/openchasqui-loader-openapi
+
+Loads OpenAPI 3.0 and 3.1 documents into the OpenChasqui model.
+
+Part of [OpenChasqui](https://github.com/abitech-dev/abitech-openchasqui-cli#readme), which generates API collections from
+OpenAPI. Most projects only need the command line,
+[`@abitechdev/openchasqui`](https://www.npmjs.com/package/@abitechdev/openchasqui).
+
+## License
+
+Apache-2.0
