@@ -1,14 +1,14 @@
 import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { parseDocument, type RunResult, run } from "@abitech/openchasqui-core";
-import { brunoEmitter } from "@abitech/openchasqui-emitter-bruno";
-import { postmanEmitter } from "@abitech/openchasqui-emitter-postman";
-import { examplesGenerator } from "@abitech/openchasqui-generator-examples";
-import { testsGenerator } from "@abitech/openchasqui-generator-tests";
-import { openApiLoader } from "@abitech/openchasqui-loader-openapi";
-import type { Finding, OpenChasquiConfig, Plugin } from "@abitech/openchasqui-spec";
-import { overlayTransformer } from "@abitech/openchasqui-transformer-overlay";
-import { policiesValidator } from "@abitech/openchasqui-validator-policies";
+import { parseDocument, type RunResult, run } from "@abitechdev/openchasqui-core";
+import { brunoEmitter } from "@abitechdev/openchasqui-emitter-bruno";
+import { postmanEmitter } from "@abitechdev/openchasqui-emitter-postman";
+import { examplesGenerator } from "@abitechdev/openchasqui-generator-examples";
+import { testsGenerator } from "@abitechdev/openchasqui-generator-tests";
+import { openApiLoader } from "@abitechdev/openchasqui-loader-openapi";
+import type { Finding, OpenChasquiConfig, Plugin } from "@abitechdev/openchasqui-spec";
+import { overlayTransformer } from "@abitechdev/openchasqui-transformer-overlay";
+import { policiesValidator } from "@abitechdev/openchasqui-validator-policies";
 
 /** Marks a folder as generated, so the next run may replace it. */
 export const MARKER = ".openchasqui";

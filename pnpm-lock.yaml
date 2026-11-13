@@ -26,37 +26,37 @@ importers:
 
   packages/cli:
     dependencies:
-      '@abitech/openchasqui-core':
+      '@abitechdev/openchasqui-core':
         specifier: workspace:^
         version: link:../core
-      '@abitech/openchasqui-emitter-bruno':
+      '@abitechdev/openchasqui-emitter-bruno':
         specifier: workspace:^
         version: link:../emitter-bruno
-      '@abitech/openchasqui-emitter-postman':
+      '@abitechdev/openchasqui-emitter-postman':
         specifier: workspace:^
         version: link:../emitter-postman
-      '@abitech/openchasqui-generator-examples':
+      '@abitechdev/openchasqui-generator-examples':
         specifier: workspace:^
         version: link:../generator-examples
-      '@abitech/openchasqui-generator-tests':
+      '@abitechdev/openchasqui-generator-tests':
         specifier: workspace:^
         version: link:../generator-tests
-      '@abitech/openchasqui-loader-openapi':
+      '@abitechdev/openchasqui-loader-openapi':
         specifier: workspace:^
         version: link:../loader-openapi
-      '@abitech/openchasqui-spec':
+      '@abitechdev/openchasqui-spec':
         specifier: workspace:^
         version: link:../spec
-      '@abitech/openchasqui-transformer-overlay':
+      '@abitechdev/openchasqui-transformer-overlay':
         specifier: workspace:^
         version: link:../transformer-overlay
-      '@abitech/openchasqui-validator-policies':
+      '@abitechdev/openchasqui-validator-policies':
         specifier: workspace:^
         version: link:../validator-policies
 
   packages/core:
     dependencies:
-      '@abitech/openchasqui-spec':
+      '@abitechdev/openchasqui-spec':
         specifier: workspace:^
         version: link:../spec
       yaml:
@@ -67,93 +67,93 @@ importers:
 
   packages/emitter-bruno:
     dependencies:
-      '@abitech/openchasqui-plugin-kit':
+      '@abitechdev/openchasqui-plugin-kit':
         specifier: workspace:^
         version: link:../plugin-kit
-      '@abitech/openchasqui-spec':
+      '@abitechdev/openchasqui-spec':
         specifier: workspace:^
         version: link:../spec
       yaml:
         specifier: 2.9.1
         version: 2.9.1
     devDependencies:
-      '@abitech/openchasqui-core':
+      '@abitechdev/openchasqui-core':
         specifier: workspace:^
         version: link:../core
-      '@abitech/openchasqui-generator-examples':
+      '@abitechdev/openchasqui-generator-examples':
         specifier: workspace:^
         version: link:../generator-examples
-      '@abitech/openchasqui-generator-tests':
+      '@abitechdev/openchasqui-generator-tests':
         specifier: workspace:^
         version: link:../generator-tests
-      '@abitech/openchasqui-loader-openapi':
+      '@abitechdev/openchasqui-loader-openapi':
         specifier: workspace:^
         version: link:../loader-openapi
 
   packages/emitter-postman:
     dependencies:
-      '@abitech/openchasqui-plugin-kit':
+      '@abitechdev/openchasqui-plugin-kit':
         specifier: workspace:^
         version: link:../plugin-kit
-      '@abitech/openchasqui-spec':
+      '@abitechdev/openchasqui-spec':
         specifier: workspace:^
         version: link:../spec
     devDependencies:
-      '@abitech/openchasqui-core':
+      '@abitechdev/openchasqui-core':
         specifier: workspace:^
         version: link:../core
-      '@abitech/openchasqui-loader-openapi':
+      '@abitechdev/openchasqui-loader-openapi':
         specifier: workspace:^
         version: link:../loader-openapi
 
   packages/generator-examples:
     dependencies:
-      '@abitech/openchasqui-data-es-pe':
+      '@abitechdev/openchasqui-data-es-pe':
         specifier: workspace:^
         version: link:../data-es-pe
-      '@abitech/openchasqui-plugin-kit':
+      '@abitechdev/openchasqui-plugin-kit':
         specifier: workspace:^
         version: link:../plugin-kit
-      '@abitech/openchasqui-spec':
+      '@abitechdev/openchasqui-spec':
         specifier: workspace:^
         version: link:../spec
     devDependencies:
-      '@abitech/openchasqui-core':
+      '@abitechdev/openchasqui-core':
         specifier: workspace:^
         version: link:../core
-      '@abitech/openchasqui-loader-openapi':
+      '@abitechdev/openchasqui-loader-openapi':
         specifier: workspace:^
         version: link:../loader-openapi
 
   packages/generator-tests:
     dependencies:
-      '@abitech/openchasqui-plugin-kit':
+      '@abitechdev/openchasqui-plugin-kit':
         specifier: workspace:^
         version: link:../plugin-kit
-      '@abitech/openchasqui-spec':
+      '@abitechdev/openchasqui-spec':
         specifier: workspace:^
         version: link:../spec
     devDependencies:
-      '@abitech/openchasqui-core':
+      '@abitechdev/openchasqui-core':
         specifier: workspace:^
         version: link:../core
-      '@abitech/openchasqui-loader-openapi':
+      '@abitechdev/openchasqui-loader-openapi':
         specifier: workspace:^
         version: link:../loader-openapi
 
   packages/loader-openapi:
     dependencies:
-      '@abitech/openchasqui-spec':
+      '@abitechdev/openchasqui-spec':
         specifier: workspace:^
         version: link:../spec
     devDependencies:
-      '@abitech/openchasqui-core':
+      '@abitechdev/openchasqui-core':
         specifier: workspace:^
         version: link:../core
 
   packages/plugin-kit:
     dependencies:
-      '@abitech/openchasqui-spec':
+      '@abitechdev/openchasqui-spec':
         specifier: workspace:^
         version: link:../spec
 
@@ -161,7 +161,7 @@ importers:
 
   packages/transformer-overlay:
     dependencies:
-      '@abitech/openchasqui-spec':
+      '@abitechdev/openchasqui-spec':
         specifier: workspace:^
         version: link:../spec
       json-p3:
@@ -171,13 +171,13 @@ importers:
         specifier: 2.9.1
         version: 2.9.1
     devDependencies:
-      '@abitech/openchasqui-core':
+      '@abitechdev/openchasqui-core':
         specifier: workspace:^
         version: link:../core
 
   packages/validator-policies:
     dependencies:
-      '@abitech/openchasqui-spec':
+      '@abitechdev/openchasqui-spec':
         specifier: workspace:^
         version: link:../spec
 

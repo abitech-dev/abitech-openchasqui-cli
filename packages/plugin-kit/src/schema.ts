@@ -1,4 +1,4 @@
-import type { ApiModel, JsonSchema } from "@abitech/openchasqui-spec";
+import type { ApiModel, JsonSchema } from "@abitechdev/openchasqui-spec";
 
 const LOCAL_SCHEMA = "#/components/schemas/";
 const MAX_DEPTH = 20;

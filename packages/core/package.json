@@ -1,5 +1,5 @@
 {
-  "name": "@abitech/openchasqui-core",
+  "name": "@abitechdev/openchasqui-core",
   "version": "0.1.0",
   "description": "Pipeline that loads, transforms, validates and emits API collections.",
   "license": "Apache-2.0",
@@ -22,7 +22,7 @@
     "directory": "packages/core"
   },
   "dependencies": {
-    "@abitech/openchasqui-spec": "workspace:^",
+    "@abitechdev/openchasqui-spec": "workspace:^",
     "yaml": "2.9.1"
   }
 }

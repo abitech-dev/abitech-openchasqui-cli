@@ -1,9 +1,9 @@
 import { readFile } from "node:fs/promises";
-import { parseDocument } from "@abitech/openchasqui-core";
-import { examplesGenerator } from "@abitech/openchasqui-generator-examples";
-import { testsGenerator } from "@abitech/openchasqui-generator-tests";
-import { openApiLoader } from "@abitech/openchasqui-loader-openapi";
-import { DEFAULT_VARIABLES, type EmitInput, type EmittedFile } from "@abitech/openchasqui-spec";
+import { parseDocument } from "@abitechdev/openchasqui-core";
+import { examplesGenerator } from "@abitechdev/openchasqui-generator-examples";
+import { testsGenerator } from "@abitechdev/openchasqui-generator-tests";
+import { openApiLoader } from "@abitechdev/openchasqui-loader-openapi";
+import { DEFAULT_VARIABLES, type EmitInput, type EmittedFile } from "@abitechdev/openchasqui-spec";
 import { beforeAll, describe, expect, it } from "vitest";
 import { parse } from "yaml";
 import { brunoEmitter } from "../src/index.js";

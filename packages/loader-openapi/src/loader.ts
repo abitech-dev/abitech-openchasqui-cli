@@ -11,7 +11,7 @@ import {
   type RequestBody,
   type Response,
   type SecurityScheme,
-} from "@abitech/openchasqui-spec";
+} from "@abitechdev/openchasqui-spec";
 
 type Json = Record<string, unknown>;
 
@@ -19,7 +19,7 @@ const METHODS: readonly HttpMethod[] = ["GET", "POST", "PUT", "PATCH", "DELETE",
 const LOCATIONS: readonly ParameterLocation[] = ["path", "query", "header", "cookie"];
 
 export const openApiLoader: Loader = {
-  name: "@abitech/openchasqui-loader-openapi",
+  name: "@abitechdev/openchasqui-loader-openapi",
   kind: "loader",
   apiVersion: 1,
   canLoad: (document) => /^3\.[01]\.\d+$/.test(String(asJson(document).openapi ?? "")),

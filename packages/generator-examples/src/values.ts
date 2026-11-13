@@ -7,9 +7,9 @@ import {
   type Random,
   ruc,
   ubigeo,
-} from "@abitech/openchasqui-data-es-pe";
-import { flattenAllOf, resolveSchema } from "@abitech/openchasqui-plugin-kit";
-import type { ApiModel, JsonSchema } from "@abitech/openchasqui-spec";
+} from "@abitechdev/openchasqui-data-es-pe";
+import { flattenAllOf, resolveSchema } from "@abitechdev/openchasqui-plugin-kit";
+import type { ApiModel, JsonSchema } from "@abitechdev/openchasqui-spec";
 
 export type DataSet = "generic" | "es-pe";
 

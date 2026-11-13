@@ -1,4 +1,4 @@
-import { type ApiModel, MODEL_VERSION, type Operation } from "@abitech/openchasqui-spec";
+import { type ApiModel, MODEL_VERSION, type Operation } from "@abitechdev/openchasqui-spec";
 import { describe, expect, it } from "vitest";
 import { policiesValidator } from "../src/index.js";
 

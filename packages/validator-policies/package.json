@@ -1,5 +1,5 @@
 {
-  "name": "@abitech/openchasqui-validator-policies",
+  "name": "@abitechdev/openchasqui-validator-policies",
   "version": "0.1.0",
   "description": "Security and quality policies for API collections: secrets, real-looking data and untestable operations.",
   "license": "Apache-2.0",
@@ -22,6 +22,6 @@
     "directory": "packages/validator-policies"
   },
   "dependencies": {
-    "@abitech/openchasqui-spec": "workspace:^"
+    "@abitechdev/openchasqui-spec": "workspace:^"
   }
 }

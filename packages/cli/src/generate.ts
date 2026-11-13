@@ -1,6 +1,6 @@
 import { mkdir, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { dirname, join, relative, sep } from "node:path";
-import { OpenChasquiError } from "@abitech/openchasqui-core";
+import { OpenChasquiError } from "@abitechdev/openchasqui-core";
 import { type Console, MARKER, report, runProject } from "./project.js";
 
 export async function generate(configPath: string, output: Console): Promise<number> {

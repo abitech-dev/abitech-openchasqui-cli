@@ -9,7 +9,7 @@ import {
   type Plugin,
   type PluginContext,
   type SourceReader,
-} from "@abitech/openchasqui-spec";
+} from "@abitechdev/openchasqui-spec";
 import { assertConfig } from "./config.js";
 import { parseDocument } from "./document.js";
 import { OpenChasquiError } from "./errors.js";

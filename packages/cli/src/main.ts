@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { parseArgs } from "node:util";
-import { OpenChasquiError } from "@abitech/openchasqui-core";
+import { OpenChasquiError } from "@abitechdev/openchasqui-core";
 import { generate } from "./generate.js";
 import { init } from "./init.js";
 import type { Console } from "./project.js";

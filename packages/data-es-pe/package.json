@@ -1,5 +1,5 @@
 {
-  "name": "@abitech/openchasqui-data-es-pe",
+  "name": "@abitechdev/openchasqui-data-es-pe",
   "version": "0.1.0",
   "description": "Deterministic synthetic Peruvian test data: names, DNI, RUC with SUNAT check digit, phones and ubigeo.",
   "license": "Apache-2.0",

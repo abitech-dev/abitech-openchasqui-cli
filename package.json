@@ -1,5 +1,5 @@
 {
-  "name": "@abitech/openchasqui-monorepo",
+  "name": "@abitechdev/openchasqui-monorepo",
   "private": true,
   "description": "Generate, validate and distribute API collections from open standards.",
   "license": "Apache-2.0",

@@ -8,7 +8,7 @@ import {
   type Plugin,
   type Transformer,
   type Validator,
-} from "@abitech/openchasqui-spec";
+} from "@abitechdev/openchasqui-spec";
 import { describe, expect, it } from "vitest";
 import { OpenChasquiError, run } from "../src/index.js";
 

@@ -1,8 +1,8 @@
-import type { ApiModel, Generator, MediaContent, Operation } from "@abitech/openchasqui-spec";
+import type { ApiModel, Generator, MediaContent, Operation } from "@abitechdev/openchasqui-spec";
 import { type DataSet, ExampleBuilder } from "./values.js";
 
 export const examplesGenerator: Generator = {
-  name: "@abitech/openchasqui-generator-examples",
+  name: "@abitechdev/openchasqui-generator-examples",
   kind: "generator",
   apiVersion: 1,
   generate: async (model, context) => {

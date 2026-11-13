@@ -1,5 +1,5 @@
 {
-  "name": "@abitech/openchasqui-generator-examples",
+  "name": "@abitechdev/openchasqui-generator-examples",
   "version": "0.1.0",
   "description": "Fills missing parameter and body examples with deterministic synthetic data.",
   "license": "Apache-2.0",
@@ -22,12 +22,12 @@
     "directory": "packages/generator-examples"
   },
   "dependencies": {
-    "@abitech/openchasqui-plugin-kit": "workspace:^",
-    "@abitech/openchasqui-spec": "workspace:^",
-    "@abitech/openchasqui-data-es-pe": "workspace:^"
+    "@abitechdev/openchasqui-plugin-kit": "workspace:^",
+    "@abitechdev/openchasqui-spec": "workspace:^",
+    "@abitechdev/openchasqui-data-es-pe": "workspace:^"
   },
   "devDependencies": {
-    "@abitech/openchasqui-core": "workspace:^",
-    "@abitech/openchasqui-loader-openapi": "workspace:^"
+    "@abitechdev/openchasqui-core": "workspace:^",
+    "@abitechdev/openchasqui-loader-openapi": "workspace:^"
   }
 }

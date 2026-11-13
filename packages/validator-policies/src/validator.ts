@@ -1,4 +1,4 @@
-import type { ApiModel, Finding, Operation, Validator } from "@abitech/openchasqui-spec";
+import type { ApiModel, Finding, Operation, Validator } from "@abitechdev/openchasqui-spec";
 
 const SECRETS: readonly { readonly pattern: RegExp; readonly what: string }[] = [
   { pattern: /eyJ[\w-]{10,}\.[\w-]{10,}\.[\w-]+/, what: "a JWT" },
@@ -13,7 +13,7 @@ const EMAIL = /[\w.+-]+@[\w-]+(\.[\w-]+)+/g;
 const WRITES = new Set(["POST", "PUT", "PATCH", "DELETE"]);
 
 export const policiesValidator: Validator = {
-  name: "@abitech/openchasqui-validator-policies",
+  name: "@abitechdev/openchasqui-validator-policies",
   kind: "validator",
   apiVersion: 1,
   validate: async (model) => model.operations.flatMap((op) => check(model, op)),

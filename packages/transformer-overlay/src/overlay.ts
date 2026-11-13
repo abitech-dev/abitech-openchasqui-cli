@@ -1,4 +1,4 @@
-import type { DocumentTransformer, Finding, PluginContext } from "@abitech/openchasqui-spec";
+import type { DocumentTransformer, Finding, PluginContext } from "@abitechdev/openchasqui-spec";
 import { JSONPathError, jsonpath } from "json-p3";
 import { parse } from "yaml";
 
@@ -8,7 +8,7 @@ type QueryInput = Parameters<typeof jsonpath.query>[1];
 const RULE = "overlay";
 
 export const overlayTransformer: DocumentTransformer = {
-  name: "@abitech/openchasqui-transformer-overlay",
+  name: "@abitechdev/openchasqui-transformer-overlay",
   kind: "document-transformer",
   apiVersion: 1,
   transformDocument: async (document, context) => apply(document, context),

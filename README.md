@@ -23,9 +23,9 @@ carries your API contract to every tool your team uses.
 Requires Node.js 22 or later. In the folder of your `openapi.yaml`:
 
 ```bash
-npx @abitech/openchasqui init       # writes openchasqui.config.yaml
-npx @abitech/openchasqui generate   # writes collections/postman and collections/bruno
-npx @abitech/openchasqui verify     # in CI: policies pass and collections are up to date
+npx @abitechdev/openchasqui init       # writes openchasqui.config.yaml
+npx @abitechdev/openchasqui generate   # writes collections/postman and collections/bruno
+npx @abitechdev/openchasqui verify     # in CI: policies pass and collections are up to date
 ```
 
 Each target gets its folder with the collection, one environment per entry and
@@ -95,20 +95,20 @@ actions:
 
 ## Packages
 
-| Package                                                                    | Purpose                                      |
-| -------------------------------------------------------------------------- | -------------------------------------------- |
-| [`@abitech/openchasqui`](packages/cli)                                     | Command line                                 |
-| [`@abitech/openchasqui-core`](packages/core)                               | Pipeline                                     |
-| [`@abitech/openchasqui-spec`](packages/spec)                               | Canonical model and plugin contract          |
-| [`@abitech/openchasqui-plugin-kit`](packages/plugin-kit)                   | Helpers for plugin authors                   |
-| [`@abitech/openchasqui-transformer-overlay`](packages/transformer-overlay) | Overlay 1.0                                  |
-| [`@abitech/openchasqui-loader-openapi`](packages/loader-openapi)           | OpenAPI 3.0 and 3.1 loader                   |
-| [`@abitech/openchasqui-generator-examples`](packages/generator-examples)   | Synthetic examples                           |
-| [`@abitech/openchasqui-generator-tests`](packages/generator-tests)         | Contract tests                               |
-| [`@abitech/openchasqui-validator-policies`](packages/validator-policies)   | Security and quality policies                |
-| [`@abitech/openchasqui-emitter-postman`](packages/emitter-postman)         | Postman Collection v2.1                      |
-| [`@abitech/openchasqui-emitter-bruno`](packages/emitter-bruno)             | Bruno, OpenCollection YAML                   |
-| [`@abitech/openchasqui-data-es-pe`](packages/data-es-pe)                   | Peruvian test data: DNI, RUC, phones, ubigeo |
+| Package                                                                       | Purpose                                      |
+| ----------------------------------------------------------------------------- | -------------------------------------------- |
+| [`@abitechdev/openchasqui`](packages/cli)                                     | Command line                                 |
+| [`@abitechdev/openchasqui-core`](packages/core)                               | Pipeline                                     |
+| [`@abitechdev/openchasqui-spec`](packages/spec)                               | Canonical model and plugin contract          |
+| [`@abitechdev/openchasqui-plugin-kit`](packages/plugin-kit)                   | Helpers for plugin authors                   |
+| [`@abitechdev/openchasqui-transformer-overlay`](packages/transformer-overlay) | Overlay 1.0                                  |
+| [`@abitechdev/openchasqui-loader-openapi`](packages/loader-openapi)           | OpenAPI 3.0 and 3.1 loader                   |
+| [`@abitechdev/openchasqui-generator-examples`](packages/generator-examples)   | Synthetic examples                           |
+| [`@abitechdev/openchasqui-generator-tests`](packages/generator-tests)         | Contract tests                               |
+| [`@abitechdev/openchasqui-validator-policies`](packages/validator-policies)   | Security and quality policies                |
+| [`@abitechdev/openchasqui-emitter-postman`](packages/emitter-postman)         | Postman Collection v2.1                      |
+| [`@abitechdev/openchasqui-emitter-bruno`](packages/emitter-bruno)             | Bruno, OpenCollection YAML                   |
+| [`@abitechdev/openchasqui-data-es-pe`](packages/data-es-pe)                   | Peruvian test data: DNI, RUC, phones, ubigeo |
 
 ## Roadmap
 

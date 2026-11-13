@@ -1,5 +1,5 @@
 {
-  "name": "@abitech/openchasqui-emitter-bruno",
+  "name": "@abitechdev/openchasqui-emitter-bruno",
   "version": "0.1.0",
   "description": "Emits Bruno collections in the OpenCollection YAML format, with environments and tests.",
   "license": "Apache-2.0",
@@ -22,14 +22,14 @@
     "directory": "packages/emitter-bruno"
   },
   "dependencies": {
-    "@abitech/openchasqui-plugin-kit": "workspace:^",
-    "@abitech/openchasqui-spec": "workspace:^",
+    "@abitechdev/openchasqui-plugin-kit": "workspace:^",
+    "@abitechdev/openchasqui-spec": "workspace:^",
     "yaml": "2.9.1"
   },
   "devDependencies": {
-    "@abitech/openchasqui-core": "workspace:^",
-    "@abitech/openchasqui-generator-examples": "workspace:^",
-    "@abitech/openchasqui-generator-tests": "workspace:^",
-    "@abitech/openchasqui-loader-openapi": "workspace:^"
+    "@abitechdev/openchasqui-core": "workspace:^",
+    "@abitechdev/openchasqui-generator-examples": "workspace:^",
+    "@abitechdev/openchasqui-generator-tests": "workspace:^",
+    "@abitechdev/openchasqui-loader-openapi": "workspace:^"
   }
 }

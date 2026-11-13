@@ -1,5 +1,5 @@
 {
-  "name": "@abitech/openchasqui",
+  "name": "@abitechdev/openchasqui",
   "version": "0.1.0",
   "description": "Generate, validate and distribute API collections from OpenAPI.",
   "license": "Apache-2.0",
@@ -25,14 +25,14 @@
     "directory": "packages/cli"
   },
   "dependencies": {
-    "@abitech/openchasqui-core": "workspace:^",
-    "@abitech/openchasqui-emitter-bruno": "workspace:^",
-    "@abitech/openchasqui-emitter-postman": "workspace:^",
-    "@abitech/openchasqui-generator-examples": "workspace:^",
-    "@abitech/openchasqui-generator-tests": "workspace:^",
-    "@abitech/openchasqui-loader-openapi": "workspace:^",
-    "@abitech/openchasqui-spec": "workspace:^",
-    "@abitech/openchasqui-transformer-overlay": "workspace:^",
-    "@abitech/openchasqui-validator-policies": "workspace:^"
+    "@abitechdev/openchasqui-core": "workspace:^",
+    "@abitechdev/openchasqui-emitter-bruno": "workspace:^",
+    "@abitechdev/openchasqui-emitter-postman": "workspace:^",
+    "@abitechdev/openchasqui-generator-examples": "workspace:^",
+    "@abitechdev/openchasqui-generator-tests": "workspace:^",
+    "@abitechdev/openchasqui-loader-openapi": "workspace:^",
+    "@abitechdev/openchasqui-spec": "workspace:^",
+    "@abitechdev/openchasqui-transformer-overlay": "workspace:^",
+    "@abitechdev/openchasqui-validator-policies": "workspace:^"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@abitech/openchasqui-emitter-postman",
+  "name": "@abitechdev/openchasqui-emitter-postman",
   "version": "0.1.0",
   "description": "Emits Postman Collection v2.1 with environments and tests.",
   "license": "Apache-2.0",
@@ -22,11 +22,11 @@
     "directory": "packages/emitter-postman"
   },
   "dependencies": {
-    "@abitech/openchasqui-spec": "workspace:^",
-    "@abitech/openchasqui-plugin-kit": "workspace:^"
+    "@abitechdev/openchasqui-spec": "workspace:^",
+    "@abitechdev/openchasqui-plugin-kit": "workspace:^"
   },
   "devDependencies": {
-    "@abitech/openchasqui-core": "workspace:^",
-    "@abitech/openchasqui-loader-openapi": "workspace:^"
+    "@abitechdev/openchasqui-core": "workspace:^",
+    "@abitechdev/openchasqui-loader-openapi": "workspace:^"
   }
 }

@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
-import { parseDocument } from "@abitech/openchasqui-core";
-import { openApiLoader } from "@abitech/openchasqui-loader-openapi";
-import type { ApiModel, Operation } from "@abitech/openchasqui-spec";
+import { parseDocument } from "@abitechdev/openchasqui-core";
+import { openApiLoader } from "@abitechdev/openchasqui-loader-openapi";
+import type { ApiModel, Operation } from "@abitechdev/openchasqui-spec";
 import { describe, expect, it } from "vitest";
 import { forValidators, testsGenerator } from "../src/index.js";
 

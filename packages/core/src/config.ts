@@ -1,4 +1,4 @@
-import { CONFIG_VERSION, type OpenChasquiConfig } from "@abitech/openchasqui-spec";
+import { CONFIG_VERSION, type OpenChasquiConfig } from "@abitechdev/openchasqui-spec";
 import { OpenChasquiError } from "./errors.js";
 
 const PRODUCTION_NAMES = /^(prd|prod|production|produccion|producción)$/i;

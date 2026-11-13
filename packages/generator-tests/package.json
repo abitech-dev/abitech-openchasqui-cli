@@ -1,5 +1,5 @@
 {
-  "name": "@abitech/openchasqui-generator-tests",
+  "name": "@abitechdev/openchasqui-generator-tests",
   "version": "0.1.0",
   "description": "Generates status, content type, schema and response time tests from the contract.",
   "license": "Apache-2.0",
@@ -22,11 +22,11 @@
     "directory": "packages/generator-tests"
   },
   "dependencies": {
-    "@abitech/openchasqui-plugin-kit": "workspace:^",
-    "@abitech/openchasqui-spec": "workspace:^"
+    "@abitechdev/openchasqui-plugin-kit": "workspace:^",
+    "@abitechdev/openchasqui-spec": "workspace:^"
   },
   "devDependencies": {
-    "@abitech/openchasqui-core": "workspace:^",
-    "@abitech/openchasqui-loader-openapi": "workspace:^"
+    "@abitechdev/openchasqui-core": "workspace:^",
+    "@abitechdev/openchasqui-loader-openapi": "workspace:^"
   }
 }

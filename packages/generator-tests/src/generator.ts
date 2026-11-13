@@ -1,11 +1,11 @@
-import { inlineSchema } from "@abitech/openchasqui-plugin-kit";
+import { inlineSchema } from "@abitechdev/openchasqui-plugin-kit";
 import type {
   ApiModel,
   Generator,
   JsonSchema,
   Operation,
   TestCase,
-} from "@abitech/openchasqui-spec";
+} from "@abitechdev/openchasqui-spec";
 
 const OPENAPI_ONLY = new Set([
   "format",
@@ -17,7 +17,7 @@ const OPENAPI_ONLY = new Set([
 ]);
 
 export const testsGenerator: Generator = {
-  name: "@abitech/openchasqui-generator-tests",
+  name: "@abitechdev/openchasqui-generator-tests",
   kind: "generator",
   apiVersion: 1,
   generate: async (model, context) => {

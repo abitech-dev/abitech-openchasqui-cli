@@ -3,7 +3,7 @@ import {
   parameterValue,
   resolveSchema,
   slugify,
-} from "@abitech/openchasqui-plugin-kit";
+} from "@abitechdev/openchasqui-plugin-kit";
 import type {
   ApiModel,
   EmitInput,
@@ -15,7 +15,7 @@ import type {
   SecurityScheme,
   TestCase,
   VariableNames,
-} from "@abitech/openchasqui-spec";
+} from "@abitechdev/openchasqui-spec";
 
 const SCHEMA_URL = "https://schema.getpostman.com/json/collection/v2.1.0/collection.json";
 
@@ -23,7 +23,7 @@ type Json = Record<string, unknown>;
 type Variables = Required<VariableNames>;
 
 export const postmanEmitter: Emitter = {
-  name: "@abitech/openchasqui-emitter-postman",
+  name: "@abitechdev/openchasqui-emitter-postman",
   kind: "emitter",
   apiVersion: 1,
   target: "postman",

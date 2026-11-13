@@ -3,7 +3,7 @@ import {
   mostUsedScheme,
   parameterValue,
   resolveSchema,
-} from "@abitech/openchasqui-plugin-kit";
+} from "@abitechdev/openchasqui-plugin-kit";
 import type {
   ApiModel,
   EmitInput,
@@ -15,7 +15,7 @@ import type {
   SecurityScheme,
   TestCase,
   VariableNames,
-} from "@abitech/openchasqui-spec";
+} from "@abitechdev/openchasqui-spec";
 import { stringify } from "yaml";
 
 type Json = Record<string, unknown>;
@@ -24,7 +24,7 @@ type Variables = Required<VariableNames>;
 const SETTINGS = { encodeUrl: true, timeout: 0, followRedirects: true, maxRedirects: 5 };
 
 export const brunoEmitter: Emitter = {
-  name: "@abitech/openchasqui-emitter-bruno",
+  name: "@abitechdev/openchasqui-emitter-bruno",
   kind: "emitter",
   apiVersion: 1,
   target: "bruno",

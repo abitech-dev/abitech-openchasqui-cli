@@ -1,4 +1,4 @@
-import { type ApiModel, MODEL_VERSION } from "@abitech/openchasqui-spec";
+import { type ApiModel, MODEL_VERSION } from "@abitechdev/openchasqui-spec";
 import { describe, expect, it } from "vitest";
 import { fileName, flattenAllOf, inlineSchema, resolveSchema, slugify } from "../src/index.js";
 
