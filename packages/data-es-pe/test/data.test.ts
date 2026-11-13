@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 import {
   createRandom,
   dni,
+  FEMALE_NAMES,
   isValidRuc,
+  MALE_NAMES,
   mobilePhone,
   person,
   ruc,
@@ -60,8 +62,25 @@ describe("generators", () => {
       expect(surnames).toBe(`${paternalSurname} ${maternalSurname}`);
     }
     const someone = person(createRandom("person"));
-    expect(someone.fullName).toBe(`${someone.firstName} ${someone.surnames}`);
+    expect(someone.fullName).toBe(`${someone.givenNames} ${someone.surnames}`);
     expect(someone.email).toMatch(/^[a-z]+\.[a-z]+@example\.com$/);
+  });
+
+  it("gives one or two distinct given names of the same gender, as RENIEC returns them", () => {
+    const random = createRandom("given names");
+    const counts = new Set<number>();
+    for (let i = 0; i < 200; i++) {
+      const someone = person(random);
+      const names = someone.givenNames.split(" ");
+      counts.add(names.length);
+      expect(new Set(names).size).toBe(names.length);
+      expect(names[0]).toBe(someone.firstName);
+      const list = (FEMALE_NAMES as readonly string[]).includes(someone.firstName)
+        ? FEMALE_NAMES
+        : MALE_NAMES;
+      for (const name of names) expect(list).toContain(name);
+    }
+    expect([...counts].sort()).toEqual([1, 2]);
   });
 
   it("uses six-digit INEI codes", () => {

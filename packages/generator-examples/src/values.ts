@@ -17,6 +17,7 @@ export type DataSet = "generic" | "es-pe";
 const MAX_DEPTH = 4;
 const GENERIC_PERSON: Person = {
   firstName: "Jane",
+  givenNames: "Jane",
   paternalSurname: "Doe",
   maternalSurname: "Roe",
   surnames: "Doe",
@@ -125,7 +126,7 @@ export class ExampleBuilder {
     if (/materno|maternal/.test(key)) return someone.maternalSurname;
     if (/paterno|paternal/.test(key)) return someone.paternalSurname;
     if (/lastname|surname|apellido/.test(key)) return someone.surnames;
-    if (/name|nombre/.test(key)) return someone.firstName;
+    if (/name|nombre/.test(key)) return someone.givenNames;
     if (/address|direccion/.test(key)) return "Av. Example 123";
     if (/date|fecha/.test(key)) return "2026-01-15";
     return "string";

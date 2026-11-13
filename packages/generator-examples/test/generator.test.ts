@@ -33,6 +33,7 @@ const customer = {
                 properties: {
                   nombre: { type: "string" },
                   apellidos: { type: "string" },
+                  nombreCompleto: { type: "string" },
                   apellidoPaterno: { type: "string" },
                   apellidoMaterno: { type: "string" },
                   correo: { type: "string" },
@@ -78,6 +79,7 @@ describe("examplesGenerator", () => {
       string
     >;
 
+    expect(body.nombreCompleto).toBe(`${body.nombre} ${body.apellidos}`);
     expect(body.apellidos).toBe(`${body.apellidoPaterno} ${body.apellidoMaterno}`);
     expect(body.dni).toMatch(/^[1-9]\d{7}$/);
     expect(isValidRuc(body.ruc ?? "")).toBe(true);
@@ -91,6 +93,7 @@ describe("examplesGenerator", () => {
     expect(
       body.correo?.startsWith(
         body.nombre
+          ?.split(" ")[0]
           ?.normalize("NFD")
           .replace(/\p{Diacritic}/gu, "")
           .toLowerCase() ?? "?",
