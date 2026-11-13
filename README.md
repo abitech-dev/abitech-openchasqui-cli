@@ -212,27 +212,13 @@ actions:
 
 ## Paquetes
 
-El CLI instala todo lo necesario; estos son los paquetes que lo forman.
+Para generar colecciones basta el CLI. Los otros dos sirven por separado.
 
-<details>
-<summary>Ver los 12 paquetes</summary>
-
-| Paquete                                                                       | Propósito                                           |
-| ----------------------------------------------------------------------------- | --------------------------------------------------- |
-| [`@abitechdev/openchasqui`](packages/cli)                                     | Línea de comandos                                   |
-| [`@abitechdev/openchasqui-core`](packages/core)                               | Pipeline                                            |
-| [`@abitechdev/openchasqui-spec`](packages/spec)                               | Modelo canónico y contrato de plugins               |
-| [`@abitechdev/openchasqui-plugin-kit`](packages/plugin-kit)                   | Utilidades para autores de plugins                  |
-| [`@abitechdev/openchasqui-transformer-overlay`](packages/transformer-overlay) | Overlay 1.0                                         |
-| [`@abitechdev/openchasqui-loader-openapi`](packages/loader-openapi)           | Cargador de OpenAPI 3.0 y 3.1                       |
-| [`@abitechdev/openchasqui-generator-examples`](packages/generator-examples)   | Ejemplos sintéticos                                 |
-| [`@abitechdev/openchasqui-generator-tests`](packages/generator-tests)         | Pruebas de contrato                                 |
-| [`@abitechdev/openchasqui-validator-policies`](packages/validator-policies)   | Políticas de seguridad y calidad                    |
-| [`@abitechdev/openchasqui-emitter-postman`](packages/emitter-postman)         | Postman Collection v2.1                             |
-| [`@abitechdev/openchasqui-emitter-bruno`](packages/emitter-bruno)             | Bruno, OpenCollection YAML                          |
-| [`@abitechdev/openchasqui-data-es-pe`](packages/data-es-pe)                   | Datos de prueba peruanos: DNI, RUC, celular, ubigeo |
-
-</details>
+| Paquete                                                     | Para qué                                                                    |
+| ----------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [`@abitechdev/openchasqui`](packages/cli)                   | El CLI, con el pipeline y todos los plugins incluidos                       |
+| [`@abitechdev/openchasqui-plugin-kit`](packages/plugin-kit) | Contrato de plugins, modelo canónico y utilidades para escribir un plugin   |
+| [`@abitechdev/openchasqui-data-es-pe`](packages/data-es-pe) | Datos de prueba peruanos para cualquier proyecto: DNI, RUC, celular, ubigeo |
 
 ## Hoja de ruta
 

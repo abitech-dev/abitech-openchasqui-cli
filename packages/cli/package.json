@@ -38,15 +38,10 @@
     "directory": "packages/cli"
   },
   "dependencies": {
-    "@abitechdev/openchasqui-core": "workspace:^",
-    "@abitechdev/openchasqui-emitter-bruno": "workspace:^",
-    "@abitechdev/openchasqui-emitter-postman": "workspace:^",
-    "@abitechdev/openchasqui-generator-examples": "workspace:^",
-    "@abitechdev/openchasqui-generator-tests": "workspace:^",
-    "@abitechdev/openchasqui-loader-openapi": "workspace:^",
-    "@abitechdev/openchasqui-spec": "workspace:^",
-    "@abitechdev/openchasqui-transformer-overlay": "workspace:^",
-    "@abitechdev/openchasqui-validator-policies": "workspace:^"
+    "@abitechdev/openchasqui-data-es-pe": "workspace:^",
+    "@abitechdev/openchasqui-plugin-kit": "workspace:^",
+    "json-p3": "3.0.3",
+    "yaml": "2.9.1"
   },
   "scripts": {
     "prepack": "node ../../scripts/readme-npm.mjs"

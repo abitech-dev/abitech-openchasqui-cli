@@ -2,37 +2,10 @@
   "files": [],
   "references": [
     {
-      "path": "packages/spec"
-    },
-    {
       "path": "packages/plugin-kit"
     },
     {
       "path": "packages/data-es-pe"
-    },
-    {
-      "path": "packages/transformer-overlay"
-    },
-    {
-      "path": "packages/core"
-    },
-    {
-      "path": "packages/loader-openapi"
-    },
-    {
-      "path": "packages/generator-examples"
-    },
-    {
-      "path": "packages/generator-tests"
-    },
-    {
-      "path": "packages/emitter-postman"
-    },
-    {
-      "path": "packages/emitter-bruno"
-    },
-    {
-      "path": "packages/validator-policies"
     },
     {
       "path": "packages/cli"

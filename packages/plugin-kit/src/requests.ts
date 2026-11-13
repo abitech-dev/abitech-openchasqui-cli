@@ -1,4 +1,4 @@
-import type { ApiModel, Parameter } from "@abitechdev/openchasqui-spec";
+import type { ApiModel, Parameter } from "./model.js";
 import { resolveSchema } from "./schema.js";
 
 const FORMAT_VALUES: Readonly<Record<string, string>> = {

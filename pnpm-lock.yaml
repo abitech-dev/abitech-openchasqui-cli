@@ -26,160 +26,22 @@ importers:
 
   packages/cli:
     dependencies:
-      '@abitechdev/openchasqui-core':
-        specifier: workspace:^
-        version: link:../core
-      '@abitechdev/openchasqui-emitter-bruno':
-        specifier: workspace:^
-        version: link:../emitter-bruno
-      '@abitechdev/openchasqui-emitter-postman':
-        specifier: workspace:^
-        version: link:../emitter-postman
-      '@abitechdev/openchasqui-generator-examples':
-        specifier: workspace:^
-        version: link:../generator-examples
-      '@abitechdev/openchasqui-generator-tests':
-        specifier: workspace:^
-        version: link:../generator-tests
-      '@abitechdev/openchasqui-loader-openapi':
-        specifier: workspace:^
-        version: link:../loader-openapi
-      '@abitechdev/openchasqui-spec':
-        specifier: workspace:^
-        version: link:../spec
-      '@abitechdev/openchasqui-transformer-overlay':
-        specifier: workspace:^
-        version: link:../transformer-overlay
-      '@abitechdev/openchasqui-validator-policies':
-        specifier: workspace:^
-        version: link:../validator-policies
-
-  packages/core:
-    dependencies:
-      '@abitechdev/openchasqui-spec':
-        specifier: workspace:^
-        version: link:../spec
-      yaml:
-        specifier: 2.9.1
-        version: 2.9.1
-
-  packages/data-es-pe: {}
-
-  packages/emitter-bruno:
-    dependencies:
-      '@abitechdev/openchasqui-plugin-kit':
-        specifier: workspace:^
-        version: link:../plugin-kit
-      '@abitechdev/openchasqui-spec':
-        specifier: workspace:^
-        version: link:../spec
-      yaml:
-        specifier: 2.9.1
-        version: 2.9.1
-    devDependencies:
-      '@abitechdev/openchasqui-core':
-        specifier: workspace:^
-        version: link:../core
-      '@abitechdev/openchasqui-generator-examples':
-        specifier: workspace:^
-        version: link:../generator-examples
-      '@abitechdev/openchasqui-generator-tests':
-        specifier: workspace:^
-        version: link:../generator-tests
-      '@abitechdev/openchasqui-loader-openapi':
-        specifier: workspace:^
-        version: link:../loader-openapi
-
-  packages/emitter-postman:
-    dependencies:
-      '@abitechdev/openchasqui-plugin-kit':
-        specifier: workspace:^
-        version: link:../plugin-kit
-      '@abitechdev/openchasqui-spec':
-        specifier: workspace:^
-        version: link:../spec
-    devDependencies:
-      '@abitechdev/openchasqui-core':
-        specifier: workspace:^
-        version: link:../core
-      '@abitechdev/openchasqui-loader-openapi':
-        specifier: workspace:^
-        version: link:../loader-openapi
-
-  packages/generator-examples:
-    dependencies:
       '@abitechdev/openchasqui-data-es-pe':
         specifier: workspace:^
         version: link:../data-es-pe
       '@abitechdev/openchasqui-plugin-kit':
         specifier: workspace:^
         version: link:../plugin-kit
-      '@abitechdev/openchasqui-spec':
-        specifier: workspace:^
-        version: link:../spec
-    devDependencies:
-      '@abitechdev/openchasqui-core':
-        specifier: workspace:^
-        version: link:../core
-      '@abitechdev/openchasqui-loader-openapi':
-        specifier: workspace:^
-        version: link:../loader-openapi
-
-  packages/generator-tests:
-    dependencies:
-      '@abitechdev/openchasqui-plugin-kit':
-        specifier: workspace:^
-        version: link:../plugin-kit
-      '@abitechdev/openchasqui-spec':
-        specifier: workspace:^
-        version: link:../spec
-    devDependencies:
-      '@abitechdev/openchasqui-core':
-        specifier: workspace:^
-        version: link:../core
-      '@abitechdev/openchasqui-loader-openapi':
-        specifier: workspace:^
-        version: link:../loader-openapi
-
-  packages/loader-openapi:
-    dependencies:
-      '@abitechdev/openchasqui-spec':
-        specifier: workspace:^
-        version: link:../spec
-    devDependencies:
-      '@abitechdev/openchasqui-core':
-        specifier: workspace:^
-        version: link:../core
-
-  packages/plugin-kit:
-    dependencies:
-      '@abitechdev/openchasqui-spec':
-        specifier: workspace:^
-        version: link:../spec
-
-  packages/spec: {}
-
-  packages/transformer-overlay:
-    dependencies:
-      '@abitechdev/openchasqui-spec':
-        specifier: workspace:^
-        version: link:../spec
       json-p3:
         specifier: 3.0.3
         version: 3.0.3
       yaml:
         specifier: 2.9.1
         version: 2.9.1
-    devDependencies:
-      '@abitechdev/openchasqui-core':
-        specifier: workspace:^
-        version: link:../core
 
-  packages/validator-policies:
-    dependencies:
-      '@abitechdev/openchasqui-spec':
-        specifier: workspace:^
-        version: link:../spec
+  packages/data-es-pe: {}
+
+  packages/plugin-kit: {}
 
 packages:
 

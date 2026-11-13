@@ -1,6 +1,6 @@
 import { readFile, stat, writeFile } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
-import { parseDocument } from "@abitechdev/openchasqui-core";
+import { parseDocument } from "./core/index.js";
 import type { Console } from "./project.js";
 
 const CANDIDATES = [

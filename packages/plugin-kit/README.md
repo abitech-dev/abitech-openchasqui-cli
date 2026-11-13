@@ -8,7 +8,7 @@
 [![CI](https://github.com/abitech-dev/abitech-openchasqui-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/abitech-dev/abitech-openchasqui-cli/actions/workflows/ci.yml)
 [![Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](https://github.com/abitech-dev/abitech-openchasqui-cli/blob/main/LICENSE)
 
-Utilidades para autores de plugins de OpenChasqui: resolver y aplanar esquemas, nombres de archivo seguros y valores de ejemplo para parámetros.
+Todo lo que necesita un plugin de OpenChasqui: el contrato de plugins, el modelo canónico de la API y utilidades para esquemas, nombres de archivo y parámetros.
 
 > **¿Solo quieres generar colecciones?** Instala el CLI,
 > [`@abitechdev/openchasqui`](https://www.npmjs.com/package/@abitechdev/openchasqui), que ya incluye este paquete.
@@ -32,11 +32,13 @@ slugify("Catálogos de Bancos"); // "catalogos-de-bancos"
 fileName('Listar "bancos" / activos'); // "Listar -bancos- - activos"
 ```
 
-| Función                                         | Qué hace                                                          |
-| ----------------------------------------------- | ----------------------------------------------------------------- |
-| `resolveSchema`, `inlineSchema`, `flattenAllOf` | Resuelven `$ref` y `allOf`; `inlineSchema` corta los ciclos       |
-| `slugify`, `fileName`                           | Nombres seguros para carpetas y archivos en cualquier sistema     |
-| `mostUsedScheme`, `parameterValue`              | Esquema de seguridad más usado y valor de ejemplo de un parámetro |
+| Exporta                                                 | Qué hace                                                          |
+| ------------------------------------------------------- | ----------------------------------------------------------------- |
+| `Plugin`, `Loader`, `Generator`, `Validator`, `Emitter` | Contrato que implementa cada tipo de plugin                       |
+| `ApiModel`, `Operation`, `Parameter`                    | Modelo canónico de la API que reciben los plugins                 |
+| `resolveSchema`, `inlineSchema`, `flattenAllOf`         | Resuelven `$ref` y `allOf`; `inlineSchema` corta los ciclos       |
+| `slugify`, `fileName`                                   | Nombres seguros para carpetas y archivos en cualquier sistema     |
+| `mostUsedScheme`, `parameterValue`                      | Esquema de seguridad más usado y valor de ejemplo de un parámetro |
 
 ## Documentación
 

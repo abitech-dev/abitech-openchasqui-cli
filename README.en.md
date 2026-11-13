@@ -210,27 +210,13 @@ actions:
 
 ## Packages
 
-The CLI installs everything it needs; these are the packages behind it.
+The CLI is all you need to generate collections. The other two work on their own.
 
-<details>
-<summary>Show the 12 packages</summary>
-
-| Package                                                                       | Purpose                                      |
-| ----------------------------------------------------------------------------- | -------------------------------------------- |
-| [`@abitechdev/openchasqui`](packages/cli)                                     | Command line                                 |
-| [`@abitechdev/openchasqui-core`](packages/core)                               | Pipeline                                     |
-| [`@abitechdev/openchasqui-spec`](packages/spec)                               | Canonical model and plugin contract          |
-| [`@abitechdev/openchasqui-plugin-kit`](packages/plugin-kit)                   | Helpers for plugin authors                   |
-| [`@abitechdev/openchasqui-transformer-overlay`](packages/transformer-overlay) | Overlay 1.0                                  |
-| [`@abitechdev/openchasqui-loader-openapi`](packages/loader-openapi)           | OpenAPI 3.0 and 3.1 loader                   |
-| [`@abitechdev/openchasqui-generator-examples`](packages/generator-examples)   | Synthetic examples                           |
-| [`@abitechdev/openchasqui-generator-tests`](packages/generator-tests)         | Contract tests                               |
-| [`@abitechdev/openchasqui-validator-policies`](packages/validator-policies)   | Security and quality policies                |
-| [`@abitechdev/openchasqui-emitter-postman`](packages/emitter-postman)         | Postman Collection v2.1                      |
-| [`@abitechdev/openchasqui-emitter-bruno`](packages/emitter-bruno)             | Bruno, OpenCollection YAML                   |
-| [`@abitechdev/openchasqui-data-es-pe`](packages/data-es-pe)                   | Peruvian test data: DNI, RUC, phones, ubigeo |
-
-</details>
+| Package                                                     | Purpose                                                           |
+| ----------------------------------------------------------- | ----------------------------------------------------------------- |
+| [`@abitechdev/openchasqui`](packages/cli)                   | The CLI, with the pipeline and every plugin built in              |
+| [`@abitechdev/openchasqui-plugin-kit`](packages/plugin-kit) | Plugin contract, canonical model and helpers for writing a plugin |
+| [`@abitechdev/openchasqui-data-es-pe`](packages/data-es-pe) | Peruvian test data for any project: DNI, RUC, phones, ubigeo      |
 
 ## Roadmap
 

@@ -1,7 +1,7 @@
 {
   "name": "@abitechdev/openchasqui-plugin-kit",
   "version": "0.1.2",
-  "description": "Utilidades de esquemas y nombres para los plugins de OpenChasqui.",
+  "description": "Contrato de plugins, modelo canónico y utilidades para escribir plugins de OpenChasqui.",
   "keywords": [
     "openapi",
     "json-schema",
@@ -29,8 +29,5 @@
     "type": "git",
     "url": "git+https://github.com/abitech-dev/abitech-openchasqui-cli.git",
     "directory": "packages/plugin-kit"
-  },
-  "dependencies": {
-    "@abitechdev/openchasqui-spec": "workspace:^"
   }
 }
