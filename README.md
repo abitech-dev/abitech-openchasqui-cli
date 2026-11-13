@@ -47,6 +47,20 @@ contrato, y el CI evita que se desactualicen.
 | **Postman y Bruno.** Postman Collection v2.1 y Bruno OpenCollection YAML en la misma corrida.                                          | **Overlays.** Renombra, reagrupa u oculta endpoints con OpenAPI Overlay 1.0, sin tocar el contrato.                                       |
 | **Datos realistas.** Ejemplos deterministas, con DNI, RUC, celulares y ubigeo peruanos cuando los pidas.                               | **Seguro por defecto.** Los secretos nunca llevan valor, los ejemplos no pueden traer tokens y solo se sobrescriben sus propias carpetas. |
 
+## Herramientas
+
+Elige una o varias en `targets`; `targets: [bruno]` genera solo Bruno.
+
+| Herramienta                           | `targets` | Estado        |
+| ------------------------------------- | --------- | ------------- |
+| Postman (Collection v2.1)             | `postman` | Disponible    |
+| Bruno (OpenCollection YAML)           | `bruno`   | Disponible    |
+| Archivos `.http` (VS Code, JetBrains) |           | Planeado, 1.2 |
+| Insomnia                              |           | Planeado, 1.2 |
+| k6 y Playwright                       |           | Planeado, 2.0 |
+
+Cada herramienta es un plugin emisor; sumar una no toca el núcleo.
+
 ## Inicio rápido
 
 Requiere Node.js 22 o superior. En la carpeta de tu `openapi.yaml`:

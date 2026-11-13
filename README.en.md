@@ -47,6 +47,20 @@ contract tests, and CI keeps them from drifting.
 | **Postman and Bruno.** Postman Collection v2.1 and Bruno OpenCollection YAML from the same run.                                | **Overlays.** Rename, regroup or hide endpoints with OpenAPI Overlay 1.0, without touching the contract.                |
 | **Realistic data.** Deterministic examples, with Peruvian DNI, RUC, phones and ubigeo when you want them.                      | **Safe by default.** Secrets never get a value, examples cannot carry tokens, and only its own folders are overwritten. |
 
+## Tools
+
+Pick one or more in `targets`; `targets: [bruno]` generates Bruno only.
+
+| Tool                               | `targets` | Status       |
+| ---------------------------------- | --------- | ------------ |
+| Postman (Collection v2.1)          | `postman` | Available    |
+| Bruno (OpenCollection YAML)        | `bruno`   | Available    |
+| `.http` files (VS Code, JetBrains) |           | Planned, 1.2 |
+| Insomnia                           |           | Planned, 1.2 |
+| k6 and Playwright                  |           | Planned, 2.0 |
+
+Each tool is an emitter plugin; adding one does not touch the core.
+
 ## Quick start
 
 Requires Node.js 22 or later. In the folder of your `openapi.yaml`:
