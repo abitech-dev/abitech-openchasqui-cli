@@ -1,5 +1,14 @@
 # @abitechdev/openchasqui-emitter-bruno
 
+## 0.1.2
+
+### Patch Changes
+
+- cccf0be: Spanish package descriptions for npm search.
+- Updated dependencies [cccf0be]
+  - @abitechdev/openchasqui-plugin-kit@0.1.2
+  - @abitechdev/openchasqui-spec@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

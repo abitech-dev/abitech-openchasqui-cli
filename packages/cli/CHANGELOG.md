@@ -1,5 +1,21 @@
 # @abitechdev/openchasqui
 
+## 0.1.2
+
+### Patch Changes
+
+- cccf0be: Spanish package descriptions for npm search.
+- Updated dependencies [cccf0be]
+  - @abitechdev/openchasqui-core@0.1.2
+  - @abitechdev/openchasqui-emitter-bruno@0.1.2
+  - @abitechdev/openchasqui-emitter-postman@0.1.2
+  - @abitechdev/openchasqui-generator-examples@0.1.2
+  - @abitechdev/openchasqui-generator-tests@0.1.2
+  - @abitechdev/openchasqui-loader-openapi@0.1.2
+  - @abitechdev/openchasqui-spec@0.1.2
+  - @abitechdev/openchasqui-transformer-overlay@0.1.2
+  - @abitechdev/openchasqui-validator-policies@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

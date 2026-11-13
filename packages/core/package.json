@@ -1,6 +1,6 @@
 {
   "name": "@abitechdev/openchasqui-core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Motor que carga, transforma, valida y emite colecciones de API.",
   "keywords": [
     "openapi",
