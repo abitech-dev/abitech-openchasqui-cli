@@ -1,5 +1,13 @@
 # @abitechdev/openchasqui
 
+## 0.2.1
+
+### Patch Changes
+
+- ce6cf33: A missing configuration file, source document or overlay now ends with `error missing-file` and its path instead of a Node.js stack trace.
+- @abitechdev/openchasqui-data-es-pe@0.2.1
+  - @abitechdev/openchasqui-plugin-kit@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
