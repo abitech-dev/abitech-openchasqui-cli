@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import type { Finding, OpenChasquiConfig, Plugin } from "@abitechdev/openchasqui-plugin-kit";
-import { parseDocument, type RunResult, run } from "./core/index.js";
+import { OpenChasquiError, parseDocument, type RunResult, run } from "./core/index.js";
 import { brunoEmitter } from "./plugins/emitter-bruno/index.js";
 import { postmanEmitter } from "./plugins/emitter-postman/index.js";
 import { examplesGenerator } from "./plugins/generator-examples/index.js";
@@ -37,10 +37,21 @@ export interface Project {
 /** Reads the configuration and runs the pipeline without writing anything. */
 export async function runProject(configPath: string): Promise<Project> {
   const base = dirname(configPath);
-  const config = parseDocument(await readFile(configPath, "utf8")) as OpenChasquiConfig;
-  const reader = { readText: (path: string) => readFile(resolve(base, path), "utf8") };
+  const config = parseDocument(await readText(configPath)) as OpenChasquiConfig;
+  const reader = { readText: (path: string) => readText(resolve(base, path)) };
   const result = await run(config, { reader, plugins: BUILT_IN_PLUGINS });
   return { config, outputRoot: resolve(base, config.output), result };
+}
+
+async function readText(path: string): Promise<string> {
+  try {
+    return await readFile(path, "utf8");
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      throw new OpenChasquiError("missing-file", `File not found: ${path}`);
+    }
+    throw error;
+  }
 }
 
 export function report(findings: readonly Finding[], output: Console): boolean {

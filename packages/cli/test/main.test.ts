@@ -83,6 +83,16 @@ describe("openchasqui generate", () => {
     expect(lines.error.join("\n")).toMatch(/^error invalid-config: .*production/);
   });
 
+  it("reports a missing source document without a stack trace", async () => {
+    expect(await generate(CONFIG.replace("petstore.yaml", "missing.yaml"))).toBe(1);
+    expect(lines.error.join("\n")).toMatch(/^error missing-file: .*missing\.yaml/);
+  });
+
+  it("reports a missing configuration file without a stack trace", async () => {
+    expect(await main(["generate", "--config", join(folder, "none.yaml")], output)).toBe(1);
+    expect(lines.error.join("\n")).toMatch(/^error missing-file: .*none\.yaml/);
+  });
+
   it("shows help and rejects unknown commands", async () => {
     expect(await main(["--help"], output)).toBe(0);
     expect(await main(["deploy"], output)).toBe(1);

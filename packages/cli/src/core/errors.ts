@@ -1,5 +1,6 @@
 export type ErrorCode =
   | "invalid-config"
+  | "missing-file"
   | "unsupported-document"
   | "unknown-target"
   | "incompatible-plugin"
