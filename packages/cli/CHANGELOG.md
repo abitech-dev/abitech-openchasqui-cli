@@ -1,5 +1,13 @@
 # @abitechdev/openchasqui
 
+## 0.2.2
+
+### Patch Changes
+
+- 8c561a3: The npm page shows the new description and the shared README, with the flow diagram, the feature cards and links to the configuration reference.
+- @abitechdev/openchasqui-data-es-pe@0.2.2
+  - @abitechdev/openchasqui-plugin-kit@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
