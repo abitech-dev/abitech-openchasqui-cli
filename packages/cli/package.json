@@ -1,7 +1,7 @@
 {
   "name": "@abitechdev/openchasqui",
   "version": "0.2.1",
-  "description": "Genera, valida y distribuye colecciones de API (Postman, Bruno y más) desde OpenAPI.",
+  "description": "Genera, valida y distribuye colecciones de API, como Postman y Bruno, desde un contrato OpenAPI",
   "keywords": [
     "openapi",
     "postman",

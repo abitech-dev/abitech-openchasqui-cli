@@ -1,237 +1,128 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo-dark.svg">
-    <img alt="OpenChasqui" src=".github/assets/logo-light.svg" width="400">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/imagenes/logo-oscuro.svg">
+    <img alt="OpenChasqui" src="docs/imagenes/logo-claro.svg" width="320">
   </picture>
 </p>
 
+<h1 align="center">OpenChasqui</h1>
+
+<p align="center">Generates, validates and ships API collections, such as Postman and Bruno, from an OpenAPI contract</p>
+
 <p align="center">
-  <strong>Your OpenAPI contract, delivered as tested Postman and Bruno collections.</strong>
+  <a href="https://www.npmjs.com/package/@abitechdev/openchasqui"><img alt="npm" src="https://img.shields.io/npm/v/@abitechdev/openchasqui?style=flat&color=1c6ccc&label=npm"></a>
+  <a href="https://github.com/abitech-dev/abitech-openchasqui-cli/actions/workflows/ci.yml"><img alt="Continuous integration" src="https://img.shields.io/github/actions/workflow/status/abitech-dev/abitech-openchasqui-cli/ci.yml?branch=main&style=flat&label=continuous%20integration"></a>
+  <img alt="Node.js 22 or later" src="https://img.shields.io/badge/node-%E2%89%A522-339933?style=flat&logo=nodedotjs&logoColor=white">
+  <a href="LICENSE"><img alt="Apache-2.0 license" src="https://img.shields.io/badge/license-Apache--2.0-2ea043?style=flat"></a>
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@abitechdev/openchasqui"><img alt="npm" src="https://img.shields.io/npm/v/@abitechdev/openchasqui?color=c2410c&label=npm"></a>
-  <a href="https://github.com/abitech-dev/abitech-openchasqui-cli/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/abitech-dev/abitech-openchasqui-cli/actions/workflows/ci.yml/badge.svg"></a>
-  <img alt="Node.js 22 or later" src="https://img.shields.io/badge/node-%E2%89%A522-339933">
-  <img alt="OpenAPI 3.0 and 3.1" src="https://img.shields.io/badge/OpenAPI-3.0%20%7C%203.1-6ba539">
-  <a href="LICENSE"><img alt="Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
-</p>
-
-<p align="center">
-  <a href="#installation">Installation</a> ·
-  <a href="#quick-start">Quick start</a> ·
-  <a href="#configuration">Configuration</a> ·
-  <a href="#overlays">Overlays</a> ·
-  <a href="#policies">Policies</a> ·
-  <a href="#packages">Packages</a> ·
+  <a href="#quick-start">Quick start</a> &nbsp;|&nbsp;
+  <a href="#usage">Usage</a> &nbsp;|&nbsp;
+  <a href="#documentation">Documentation</a> &nbsp;|&nbsp;
   <a href="README.md">Español</a>
 </p>
 
-<p align="center">
-  <img alt="openchasqui generate followed by a Bruno run with 20 of 20 tests passing" src=".github/assets/terminal.svg" width="760">
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/diagramas/flujo-dark.svg">
+  <img alt="OpenChasqui reads the OpenAPI contract, writes the Postman and Bruno collections, and continuous integration checks that they stay current" src="docs/diagramas/flujo.svg">
+</picture>
 
-The _chasqui_ carried messages across the Inca road network. OpenChasqui
-carries your API contract to every tool your team uses: one command turns an
-OpenAPI document into collections with environments, realistic examples and
-contract tests, and CI keeps them from drifting.
+The _chasqui_ carried messages along the Inca road network. OpenChasqui carries
+your API contract to every tool your team uses, with environments, realistic
+examples and contract tests, and continuous integration keeps them current.
 
 > [!NOTE]
 > OpenChasqui is in early development (0.x). The configuration and the plugin
 > contract may change before 1.0.
 
-## Features
+## What it does
 
-|                                                                                                                                |                                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| **One source of truth.** Collections are generated from the contract, never edited by hand, so they cannot drift from the API. | **Tests included.** Every request checks its status, content type, response schema and response time.                   |
-| **Postman and Bruno.** Postman Collection v2.1 and Bruno OpenCollection YAML from the same run.                                | **Overlays.** Rename, regroup or hide endpoints with OpenAPI Overlay 1.0, without touching the contract.                |
-| **Realistic data.** Deterministic examples, with Peruvian DNI, RUC, phones and ubigeo when you want them.                      | **Safe by default.** Secrets never get a value, examples cannot carry tokens, and only its own folders are overwritten. |
-
-## Tools
-
-Pick one or more in `targets`; `targets: [bruno]` generates Bruno only.
-
-| Tool                               | `targets` | Status       |
-| ---------------------------------- | --------- | ------------ |
-| Postman (Collection v2.1)          | `postman` | Available    |
-| Bruno (OpenCollection YAML)        | `bruno`   | Available    |
-| `.http` files (VS Code, JetBrains) |           | Planned, 1.2 |
-| Insomnia                           |           | Planned, 1.2 |
-| k6 and Playwright                  |           | Planned, 2.0 |
-
-Each tool is an emitter plugin; adding one does not touch the core.
-
-## Installation
-
-Requires Node.js 22 or later. Add it as a development dependency of the project
-that holds the contract:
-
-```bash
-npm i -D @abitechdev/openchasqui
-pnpm add -D @abitechdev/openchasqui
-yarn add -D @abitechdev/openchasqui
-```
-
-The command is then `npx openchasqui`. It also runs without installing, with
-`npx @abitechdev/openchasqui`.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="docs/iconos/fuente-dark.svg"><img alt="One source" src="docs/iconos/fuente.svg" width="28"></picture><br><strong>A single source of truth</strong><br>Collections come from the contract and are never edited by hand.
+    </td>
+    <td width="50%" valign="top">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="docs/iconos/pruebas-dark.svg"><img alt="Tests" src="docs/iconos/pruebas.svg" width="28"></picture><br><strong>Tests included</strong><br>Every request checks status, content type, schema and response time.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="docs/iconos/herramientas-dark.svg"><img alt="Tools" src="docs/iconos/herramientas.svg" width="28"></picture><br><strong>Postman and Bruno</strong><br>Postman Collection v2.1 and Bruno OpenCollection in the same run.
+    </td>
+    <td width="50%" valign="top">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="docs/iconos/overlays-dark.svg"><img alt="Overlays" src="docs/iconos/overlays.svg" width="28"></picture><br><strong>Overlays</strong><br>Rename, regroup or hide endpoints with OpenAPI Overlay 1.0, without touching the contract.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="docs/iconos/datos-dark.svg"><img alt="Data" src="docs/iconos/datos.svg" width="28"></picture><br><strong>Realistic data</strong><br>Deterministic examples, with Peruvian DNI, RUC, phones and ubigeo when you ask.
+    </td>
+    <td width="50%" valign="top">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="docs/iconos/seguridad-dark.svg"><img alt="Security" src="docs/iconos/seguridad.svg" width="28"></picture><br><strong>Safe by default</strong><br>Secrets never carry a value and only its own folders get replaced.
+    </td>
+  </tr>
+</table>
 
 ## Quick start
 
-In the folder of your `openapi.yaml`:
-
 ```bash
-npx @abitechdev/openchasqui init       # writes openchasqui.config.yaml
-npx @abitechdev/openchasqui generate   # writes collections/postman and collections/bruno
-npx @abitechdev/openchasqui verify     # in CI: policies pass and collections are up to date
+npm i -D @abitechdev/openchasqui
+npx openchasqui init       # creates openchasqui.config.yaml
+npx openchasqui generate   # writes collections/postman and collections/bruno
+npx openchasqui verify     # in continuous integration
 ```
 
-Import the folder in Postman or Bruno, or run it from the command line:
+<p align="center">
+  <img alt="openchasqui generate followed by a Bruno run with 20 of 20 tests passing" src="docs/imagenes/terminal.svg" width="760">
+</p>
 
-```bash
-npx newman run collections/postman/*.postman_collection.json   -e collections/postman/*-dev.postman_environment.json
-cd collections/bruno && npx @usebruno/cli run --env dev
-```
+Import the folder into Postman or Bruno, or run it with `newman` or the Bruno
+CLI. It also works without installing, with `npx @abitechdev/openchasqui`.
 
-## How it works
+## Usage
 
-```mermaid
-flowchart LR
-  A[OpenAPI 3.0 / 3.1] --> B[Overlays]
-  B --> C[Loader]
-  C --> D[Examples and tests]
-  D --> E[Policies]
-  E --> F[Postman v2.1]
-  E --> G[Bruno OpenCollection]
-```
+| Tool                        | `targets` | Status       |
+| --------------------------- | --------- | ------------ |
+| Postman (Collection v2.1)   | `postman` | Available    |
+| Bruno (OpenCollection YAML) | `bruno`   | Available    |
+| `.http` files and Insomnia  |           | Planned, 1.2 |
+| k6 and Playwright           |           | Planned, 2.0 |
 
-Each step is a plugin. The same contract always produces the same files, so
-`verify` catches any outdated collection in CI.
+The CLI is all you need to generate collections. The other two packages work
+on their own:
 
-## What you get
+| Package                                                     | Purpose                                        |
+| ----------------------------------------------------------- | ---------------------------------------------- |
+| [`@abitechdev/openchasqui`](packages/cli)                   | The CLI, with every plugin included            |
+| [`@abitechdev/openchasqui-plugin-kit`](packages/plugin-kit) | Contract and helpers to write a plugin         |
+| [`@abitechdev/openchasqui-data-es-pe`](packages/data-es-pe) | Peruvian test data: DNI, RUC, phone and ubigeo |
 
-```text
-collections/
-├── postman/
-│   ├── petstore.postman_collection.json
-│   └── petstore-dev.postman_environment.json
-└── bruno/
-    ├── opencollection.yml
-    ├── environments/dev.yml
-    ├── pets/
-    │   ├── folder.yml
-    │   ├── List pets.yml
-    │   └── Create a pet.yml
-    └── store/
-        └── Opening hours.yml
-```
+## Compatibility
 
-Each request comes with its tests: status code, content type, response schema
-and response time.
+| Tool    | Version                      |
+| ------- | ---------------------------- |
+| Node.js | 22 or later                  |
+| OpenAPI | 3.0 and 3.1, in JSON or YAML |
+| Overlay | OpenAPI Overlay 1.0          |
 
-With `data: es-pe`, missing examples are filled with Peruvian test data shaped
-like a RENIEC lookup: one or two given names, both surnames, one person and one
-place per object, and a RUC with a valid SUNAT check digit:
+## Documentation
 
-```json
-{
-  "nombres": "Isabel Lucía",
-  "apellidoPaterno": "Gutiérrez",
-  "apellidoMaterno": "Castillo",
-  "correo": "isabel.gutierrez@example.com",
-  "dni": "11067581",
-  "ruc": "20968504291",
-  "celular": "925340375",
-  "ubigeo": "170101",
-  "distrito": "Tambopata"
-}
-```
-
-## Configuration
-
-```yaml
-version: 1
-source: openapi.yaml
-overlays: [names.overlay.yaml]
-data: es-pe
-targets: [postman, bruno]
-output: collections
-environments:
-  qa:
-    variables:
-      baseUrl: https://api.qa.example.com
-    secrets: [token]
-```
-
-| Key            | Required | Description                                                          |
-| -------------- | -------- | -------------------------------------------------------------------- |
-| `version`      | yes      | Configuration version, `1`                                           |
-| `source`       | yes      | OpenAPI 3.0 or 3.1 document, JSON or YAML                            |
-| `targets`      | yes      | `postman`, `bruno` or both                                           |
-| `output`       | yes      | Folder for the collections, one subfolder per target                 |
-| `overlays`     | no       | [Overlay 1.0](https://spec.openapis.org/overlay/v1.0.html) documents |
-| `data`         | no       | Synthetic examples: `generic` (default) or `es-pe`                   |
-| `environments` | no       | Variables and secret names per environment                           |
-| `variables`    | no       | Names for the base URL, token and API key variables                  |
-| `tests`        | no       | `responseTimeMs`, the slowest acceptable response (default 5000)     |
-
-`openchasqui` only replaces folders it created before; it refuses to write over
-anything else. No environment may look like production, and a secret never
-gets a value.
-
-## Overlays
-
-An overlay renames, regroups or trims the collection without touching the
-contract. Two extensions control the layout:
-
-```yaml
-overlay: 1.0.0
-info: { title: Spanish names, version: 1.0.0 }
-actions:
-  - target: $.paths['/banks'].get
-    update:
-      summary: Listar bancos
-      x-openchasqui-folder: Catálogos/Bancos
-      x-openchasqui-order: 1
-  - target: $.paths['/internal/metrics']
-    remove: true
-```
-
-## Policies
-
-`generate` and `verify` report:
-
-| Rule                     | Severity | When                                                |
-| ------------------------ | -------- | --------------------------------------------------- |
-| `no-secrets-in-examples` | error    | An example contains a JWT, a cloud key or a token   |
-| `reserved-email-domains` | warning  | An example email is not on `example.com` or similar |
-| `success-response`       | warning  | An operation documents no 2xx response              |
-| `public-write`           | warning  | A write operation has no authentication             |
-
-## Packages
-
-The CLI is all you need to generate collections. The other two work on their own.
-
-| Package                                                     | Purpose                                                           |
-| ----------------------------------------------------------- | ----------------------------------------------------------------- |
-| [`@abitechdev/openchasqui`](packages/cli)                   | The CLI, with the pipeline and every plugin built in              |
-| [`@abitechdev/openchasqui-plugin-kit`](packages/plugin-kit) | Plugin contract, canonical model and helpers for writing a plugin |
-| [`@abitechdev/openchasqui-data-es-pe`](packages/data-es-pe) | Peruvian test data for any project: DNI, RUC, phones, ubigeo      |
-
-## Roadmap
-
-| Version | Scope                                                                                                                                        |
-| ------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0     | Overlay 1.0, examples and contract tests, policies and coverage, Bruno (OpenCollection) and Postman, `init` and `verify`, Peruvian test data |
-| 1.1     | Arazzo workflows, GitHub Action, SARIF                                                                                                       |
-| 1.2     | `.http` and Insomnia, OpenAPI 3.2                                                                                                            |
-| 2.0     | k6 and Playwright, stable third-party plugin contract                                                                                        |
+| I want to…                               | Document                                                                  |
+| ---------------------------------------- | ------------------------------------------------------------------------- |
+| Tune configuration, overlays or policies | [referencia-configuracion.md](docs/referencia-configuracion.md) (Spanish) |
+| See what each version brings             | [hoja-de-ruta.md](docs/hoja-de-ruta.md) (Spanish)                         |
+| Write a plugin                           | [plugin-kit](packages/plugin-kit)                                         |
+| Know why it is released this way         | [ADR 0001](docs/decisiones/0001-ramas-y-publicacion.md) (Spanish)         |
+| See changes by version                   | [CHANGELOG.md](packages/cli/CHANGELOG.md)                                 |
 
 ## Contributing
 
-Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md)
-first; security reports go through [SECURITY.md](SECURITY.md).
+The steps and what continuous integration checks are in
+[CONTRIBUTING.md](CONTRIBUTING.md). To report a vulnerability, follow
+[SECURITY.md](SECURITY.md).
 
 ## License
 
-[Apache License 2.0](LICENSE). Copyright 2026 The OpenChasqui Authors.
+Copyright 2026 The OpenChasqui Authors. Apache License 2.0, see [LICENSE](LICENSE).
