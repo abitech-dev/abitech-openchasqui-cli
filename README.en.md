@@ -114,7 +114,7 @@ on their own:
 | Tune configuration, overlays or policies | [referencia-configuracion.md](docs/referencia-configuracion.md) (Spanish) |
 | See what each version brings             | [hoja-de-ruta.md](docs/hoja-de-ruta.md) (Spanish)                         |
 | Write a plugin                           | [plugin-kit](packages/plugin-kit)                                         |
-| Know why it is released this way | [ADR 0001](docs/decisiones/0001-ramas-y-publicacion.md) (Spanish) |
+| Know why it is released this way         | [ADR 0001](docs/decisiones/0001-ramas-y-publicacion.md) (Spanish)         |
 | See changes by version                   | [CHANGELOG.md](packages/cli/CHANGELOG.md)                                 |
 
 ## Contributing

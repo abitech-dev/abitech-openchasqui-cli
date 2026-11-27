@@ -115,7 +115,7 @@ separado:
 | Ajustar la configuración, los overlays o las políticas | [referencia-configuracion.md](docs/referencia-configuracion.md) |
 | Saber qué viene en cada versión                        | [hoja-de-ruta.md](docs/hoja-de-ruta.md)                         |
 | Escribir un plugin                                     | [plugin-kit](packages/plugin-kit)                               |
-| Saber por qué se publica así | [ADR 0001](docs/decisiones/0001-ramas-y-publicacion.md) |
+| Saber por qué se publica así                           | [ADR 0001](docs/decisiones/0001-ramas-y-publicacion.md)         |
 | Ver los cambios por versión                            | [CHANGELOG.md](packages/cli/CHANGELOG.md)                       |
 
 ## Contribuir
