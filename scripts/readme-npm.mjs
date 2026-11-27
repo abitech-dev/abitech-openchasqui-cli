@@ -8,7 +8,7 @@ const root = new URL("../", import.meta.url);
 
 function absolute(target) {
   if (/^(https?:|mailto:|#)/.test(target)) return target;
-  if (target.startsWith(".github/assets/")) return `${RAW}/${target}`;
+  if (/\.(svg|png|jpe?g|gif|webp)$/.test(target)) return `${RAW}/${target}`;
   if (target.startsWith("packages/")) return `${REPO}/tree/main/${target}`;
   return `${REPO}/blob/main/${target}`;
 }

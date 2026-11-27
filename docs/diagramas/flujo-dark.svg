@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 112 960 296" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="flujo-dark-title flujo-dark-desc" id="flujo-dark-root">
+        <title id="flujo-dark-title">Cómo convierte OpenChasqui un contrato en colecciones</title>
+        <desc id="flujo-dark-desc">OpenChasqui lee el contrato OpenAPI, aplica overlays, ejemplos, pruebas y políticas, escribe las colecciones de Postman y Bruno, y la integración continua comprueba que sigan al día.</desc>
+        <defs>
+      <style>#flujo-dark-root { font-family: 'Inter', system-ui, sans-serif; color: #e3e8ee; }
+      #flujo-dark-root .diagram-container { width: 100%; overflow-x: auto; }
+      @media print {
+#flujo-dark-root .diagram-container { overflow-x: visible; }
+}</style>
+          <marker id="flujo-dark-flujo-dark-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a2acb7"/></marker>
+          <marker id="flujo-dark-flujo-dark-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5aa9f2"/></marker>
+        </defs>
+        <rect x="0" y="112" width="960" height="296" fill="#080e16"/>
+        <line x1="240" y1="200" x2="320" y2="200" stroke="#5aa9f2" stroke-width="1.4" marker-end="url(#flujo-dark-flujo-dark-arrow-accent)"/>
+        <line x1="560" y1="164" x2="680" y2="164" stroke="#a2acb7" stroke-width="1.2" marker-end="url(#flujo-dark-flujo-dark-arrow)"/>
+        <line x1="560" y1="236" x2="680" y2="236" stroke="#a2acb7" stroke-width="1.2" marker-end="url(#flujo-dark-flujo-dark-arrow)"/>
+        <line x1="440" y1="320" x2="440" y2="264" stroke="#a2acb7" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#flujo-dark-flujo-dark-arrow)"/>
+        <rect x="242.0" y="175" width="76" height="16" rx="2" fill="#080e16"/>
+        <text x="280" y="187" fill="#a2acb7" font-size="11" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">GENERATE</text>
+        <rect x="40" y="152" width="200" height="96" rx="6" fill="#080e16"/>
+        <rect x="40" y="152" width="200" height="96" rx="6" fill="#121921" stroke="#e3e8ee" stroke-width="1"/>
+        <text x="140.0" y="198.0" fill="#e3e8ee" font-size="16" font-family="'Inter', system-ui, sans-serif" text-anchor="middle" font-weight="600">Tu contrato</text>
+        <text x="140.0" y="216.0" fill="#a2acb7" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">OpenAPI 3.0 o 3.1</text>
+        <rect x="320" y="136" width="240" height="128" rx="6" fill="#080e16"/>
+        <rect x="320" y="136" width="240" height="128" rx="6" fill="#5aa9f2" stroke="#5aa9f2" stroke-width="1.4" fill-opacity="0.12"/>
+        <text x="440.0" y="198.0" fill="#e3e8ee" font-size="16" font-family="'Inter', system-ui, sans-serif" text-anchor="middle" font-weight="600">OpenChasqui</text>
+        <text x="440.0" y="216.0" fill="#a2acb7" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">ejemplos, pruebas y políticas</text>
+        <rect x="680" y="136" width="240" height="56" rx="6" fill="#080e16"/>
+        <rect x="680" y="136" width="240" height="56" rx="6" fill="#e3e8ee" stroke="#e3e8ee" stroke-width="1" fill-opacity="0.03" stroke-opacity="0.30"/>
+        <text x="800.0" y="162.0" fill="#e3e8ee" font-size="16" font-family="'Inter', system-ui, sans-serif" text-anchor="middle" font-weight="600">Postman</text>
+        <text x="800.0" y="180.0" fill="#a2acb7" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">Collection v2.1</text>
+        <rect x="680" y="208" width="240" height="56" rx="6" fill="#080e16"/>
+        <rect x="680" y="208" width="240" height="56" rx="6" fill="#e3e8ee" stroke="#e3e8ee" stroke-width="1" fill-opacity="0.03" stroke-opacity="0.30"/>
+        <text x="800.0" y="234.0" fill="#e3e8ee" font-size="16" font-family="'Inter', system-ui, sans-serif" text-anchor="middle" font-weight="600">Bruno</text>
+        <text x="800.0" y="252.0" fill="#a2acb7" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">OpenCollection YAML</text>
+        <rect x="340" y="320" width="200" height="64" rx="6" fill="#080e16"/>
+        <rect x="340" y="320" width="200" height="64" rx="6" fill="#121921" stroke="#e3e8ee" stroke-width="1"/>
+        <text x="440.0" y="350.0" fill="#e3e8ee" font-size="16" font-family="'Inter', system-ui, sans-serif" text-anchor="middle" font-weight="600">Tu CI</text>
+        <text x="440.0" y="368.0" fill="#a2acb7" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace" text-anchor="middle">openchasqui verify</text>
+      </svg>
